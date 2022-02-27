@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+<html lang="ru" style="position: relative;max-width: 100%;">
+<head>
+<title>Цифровая платформа для управления спортивными мероприятиями. Календарь соревнований и личный профиль спортсмена. </title>
+<meta charset="UTF-8" />
+<meta name="description" content="Цифровая платформа для управления спортивными организациями и соревнованиями. Поможем привлечь больше участников и автоматизировать работу с данными." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<meta name="og:locale" content="ru_RU" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="Цифровая платформа для управления спортивными мероприятиями. Календарь соревнований и личный профиль спортсмена." />
+<meta name="og:description" content="Цифровая платформа для управления спортивными организациями и соревнованиями. Поможем привлечь больше участников и автоматизировать работу с данными." />
+<meta name="og:url" content="https://e-champs.com/" />
+<meta name="og:site_name" content="e-Сhamps Sports" />
+<meta name="og:image" content="
+                    https://e-champs.com/images/logo_for_og.png            " />
+<script>!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?162",t.onload=function(){VK.Retargeting.Init("VK-RTRG-391141-fqhH4"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script>
+
+<script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2351395648450370');
+            fbq('track', 'PageView');
+        </script>
+
+<link rel="stylesheet" href="/build/app.c6005d01.css">
+<link rel="stylesheet" href="/build/auth.7f57feba.css">
+<link rel="stylesheet" href="/build/about.7e47ee3c.css">
+<link rel='preconnect' href='https://fonts.gstatic.com'>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "url": "https://e-champs.com",
+                "logo": "http://e-champs.com/images/portal-logo-ru-stay-home.png"
+            }
+        </script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2351395648450370&ev=PageView&noscript=1" alt=""/></noscript>
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-391141-fqhH4" style="position:fixed; left:-999px;" alt=""/></noscript>
+<header>
+<nav class="nav-n  navbar-homepage " id="navbar_main" data-footer-transparency="
+            
+        " data-footer-dark="">
+<div class="nav-menu">
+<a class="nav-logo-link" href="/">
+<img class="logo-n" src="/images/sport-online-ru.svg" alt="Логотип компании E-champs">
+</a>
+<div class="nav-item-wrap" id="navbar_main_collapse">
+<ul class="list-n">
+<li class="nav-menu-item nav-btn nav-menu-item-mr">
+<a class="btn-n btn-n-header  " href="
+                                                     /calendar/all-sports/all-countries/all-regions/all/2022/february
+                                               " id="dropdownMenuButton" role="button">Календари </a>
+<ul class="nav-menu-list" aria-labelledby="dropdownMenuButton">
+<li><a class="link-n nav-menu-link" href="
+                                                                  /calendar/all-sports/all-countries/all-regions/all/2022/february
+                                                                ">Календари</a>
+</li>
+<li><a class="link-n nav-menu-link" href="/organizations">Организации</a></li>
+<li><a class="link-n nav-menu-link" href="/news">Статьи</a></li>
+<li><a id="get-insurance-menu" href="#" data-toggle="modal" data-target="#modal-get-insurance" class="link-n nav-menu-link">Оформить страховку</a></li>
+<li><a class="link-n nav-menu-link" href="/widget/add-calender">Виджет календаря</a></li>
+</ul>
+</li>
+<li class="nav-menu-item"><a class="link-n nav-item-link " href="/community">Сообщество</a></li>
+<li class="nav-list-profile-wrap">
+<ul class="list-n nav-list-profile">
+<li class="nav-menu-item">
+<button class="btn-n btn-n-header btn-n-dropdown btn-n-dropdown-header" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Добавить
+</button>
+<ul class="nav-menu-list " aria-labelledby="dropdownMenuButton1">
+<li><a class="link-n nav-menu-link" href="/event/create" onclick="yaCounter49974598.reachGoal('create-event'); return true;">Мероприятие</a></li>
+<li><a class="link-n nav-menu-link" href="/organization/create" onclick="yaCounter49974598.reachGoal('create-org'); return true;">Организацию</a></li>
+</ul>
+</li>
+<li class="nav-menu-item nav-menu-item-mr flex-shrink-0">
+<button id="sign-in" onclick="ym(49974598, 'reachGoal', 'Login_button'); return true;" class="link-n nav-item-link nav-link-enter" data-toggle="modal" data-target="#auth-container-modal">Войти</button>
+</li>
+<li class="nav-menu-item">
+<div>
+<button class="link-n nav-menu-language nav-item-link" id="ru-language" onclick="changeLanguage()">Ru</button>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<nav class="navbar test-ui navbar-light fixed-top d-sm-block d-lg-none  navbar-homepage " id="navbar-mobile">
+<div class="container">
+<a class="mobile-logo" href="/">
+<img src="/images/sport-online-ru.svg" alt="Логотип компании E-champs">
+</a>
+<button id="togglerIcon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_mobile_collapse" aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation" style="z-index: 0;">
+<span class="link-n-mobile link-n-mobile-js">Меню</span>
+<span class="link-n-mobile hidden link-n-mobile-js">Закрыть</span>
+<span class="menu-wrapper">
+<span id="hamburgerIcon" class="hamburger-menu">
+<span class="hamburger-menu-dot"></span>
+</span>
+</span>
+</button>
+<li class="collapse navbar-collapse dropdown-masked" id="navbar_mobile_collapse">
+<ul class="navbar-nav align-items-lg-center ml-lg-auto navbar-nav-mobile">
+<li class="nav-menu-item-mobile nav-menu-item-mobile-admin">
+<a class="link-n nav-menu-link link-n-mobile" href="                                   /calendar/all-sports/all-countries/all-regions/all/2022/february
+                                ">Календари</a>
+</li>
+<li class="nav-menu-item-mobile nav-menu-item-mobile-admin">
+<a class="link-n nav-menu-link link-n-mobile" href="/community">Сообщество</a>
+</li>
+<li class="nav-menu-item-mobile">
+<a class="link-n nav-menu-link link-n-mobile" href="/organizations">Организации</a>
+</li>
+<li class="nav-menu-item-mobile nav-menu-item-mobile-admin">
+<a class="link-n nav-menu-link link-n-mobile" href="/news">Статьи</a>
+</li>
+<li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/organization/create" onclick="yaCounter49974598.reachGoal('create-org'); return true;">Добавить организацию</a>
+</li>
+<li>
+<ul class="nav-menu-user-lit">
+<li class="d-block mr-right user">
+<ul>
+<li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/event/create" onclick="yaCounter49974598.reachGoal('create-event'); return true;">Добавить мероприятие</a>
+</li>
+</ul>
+</li> <li class="nav-menu-item-wrap">
+<button class="link-n nav-menu-language nav-menu-link link-n-mobile nav-menu-item-lang" id="ru-language" onclick="changeLanguage()">
+Ru
+</button>
+</li>
+</ul>
+</li>
+<li class="nav-menu-item-mobile-btn">
+<a class="btn-n text-align-center btn-n-mobile" href="/login">Войти</a>
+</li>
+<li class="nav-menu-item-mobile-list">
+<ul class="nav-menu-list nav-menu-list-mobile-dropdown " aria-labelledby="dropdownMenuButton1">
+<li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/event/create" onclick="yaCounter49974598.reachGoal('create-event'); return true;">Мероприятие</a>
+</li>
+ <li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/organization/create" onclick="yaCounter49974598.reachGoal('create-org'); return true;">Организацию</a>
+</li>
+<li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/widget/add-calender">Виджет календаря</a>
+</li>
+<li class="nav-menu-item-mobile"><a class="link-n nav-menu-link link-n-mobile" href="/event/create/online-event">Online тренировку</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div>
+</div>
+<script>
+    cackle_widget = window.cackle_widget || [];
+    cackle_widget.push({widget: 'Comment', id: 64086, ssoAuth: "e30= 122566a406dddcf4b2373647064a6f98 1645959957324"});
+
+    let flash = document.querySelectorAll('.flash-message');
+    let setLocalBtn = document.getElementById('ru-language') ? document.getElementById('ru-language') : document.getElementById('en-user-language');
+    let homePage = '/en/';
+    let curPage = window.location.href;
+    let btnDropDownMobile = document.getElementById('btn-dropdown-mobile');
+    let list = document.querySelector('.nav-menu-list-mobile-dropdown');
+    let btnsMobileMenu = document.querySelectorAll('.btn-mobile-menu');
+    let flashMessageCloseBtn = document.querySelector('.flash-message-close-btn');
+    let darkThemeToggle = document.querySelector('#dark-theme-toggle');
+    let darkThemeToggle2 = document.querySelector('#dark-theme-toggle-2');
+
+    if (darkThemeToggle) {
+        darkThemeToggle.addEventListener('click', toggleTheme)
+    }
+
+    if (darkThemeToggle2) {
+        darkThemeToggle2.addEventListener('click', toggleTheme)
+    }
+
+    function toggleTheme (event) {
+        if (event.target) {
+            let data = {
+                isUserDarkTheme: event.target.checked
+            }
+
+            let options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(data)
+            }
+
+            fetch('/profile/user-toggle-theme', options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.success === true) {
+                        window.location.reload()
+                    }
+                })
+                .catch((e) => {console.log(e.message)})
+        }
+    }
+
+    if (btnDropDownMobile) {
+        btnDropDownMobile.addEventListener('click', function () {
+            list.classList.toggle('nav-menu-mobile-open');
+            btnDropDownMobile.classList.toggle('btn-n-dropdown');
+            btnsMobileMenu.forEach(btn => {
+                btn.classList.toggle('hidden');
+            })
+        })
+    }
+
+    function changeLanguage() { // для работы функции на локальном сервере com нужно заменить на local
+        let cutPath = curPage.split('.com/')
+        if (curPage.includes('.com/en')) {
+            homePage = cutPath[0] + '.com';
+            cutPath = curPage.split('.com/en');
+            window.location = homePage + cutPath[1];
+        } else {
+            window.location = homePage + cutPath[1];
+        }
+    }
+
+    if (flash) {
+        setTimeout(function () {
+            flash.forEach(el => {
+                    el.classList.remove('flash-message-close');
+                flashMessageCloseBtn.addEventListener('click', function () {
+                    el.classList.add('flash-message-close');
+                })
+                }
+            )
+            setTimeout(function () {
+                flash.forEach(el => {
+                        el.querySelector('.flash-message-text').remove();
+                        el.classList.add('flash-message-close');
+
+                    }
+                )
+            }, 3000);
+        }, 300);
+    }
+</script>
+</header>
+<body class="t-body" style="margin:0;">
+<div id="common-alert-message" class="d-none">
+<div id="common-alert-message-text" class="alert alert-danger alert-dismissible fade show" role="alert">
+Произошла ошибка. Перезагрузите страницу и попробуйте ещё раз
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+</div>
+<div id="is-show-name-confirmation" data-is-show-modal-name-confirmation="0"></div>
+<div class="newuiclass about-block">
+<div class="content-wrap-about">
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-image-wrap">
+<img class="about-puddle" src="/images/about/puddle.svg">
+<picture>
+<source srcset="/images/about/people-min.webp" type="image/webp">
+<img class="about-image-people about-image" src="/images/about/people-min.png" alt="" width="500">
+</picture>
+</div>
+<div class="about-title-text-wrap">
+<h1 class="about-title-text">CRM для организации соревнований</h1>
+<h2 class="about-text">Опубликуйте ваше соревнование и принимайте заявки и оплаты онлайн уже сегодня. Более 1 000 000 человек уже воспользовались e-Champs, чтобы найти соревнования.</h2>
+<div class="d-flex align-items-center">
+<a href="https://api.whatsapp.com/send/?phone=79774902317&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%[…]83%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%83&app_absent=0" class="icon-button whatsapp"><i class="icon-whatsapp fab fa-whatsapp"></i><span></span></a>
+<a href="https://api.whatsapp.com/send/?phone=79774902317&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%[…]83%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%83&app_absent=0" class="link-new">Узнать больше</a>
+</div>
+</div>
+</div>
+<div>
+<ul class="about-feature-list">
+<li class="about-feature-item">
+<div class="about-feature-image-wrap">
+<img class="about-feature-image" src="/images/icons/like.svg" alt="">
+</div>
+<div>
+<p class="about-title-text about-title-text-feature">Конструктор</p>
+<p class="about-text">Создайте лэндинг и настройте прием заявок за 5 минут.</p>
+</div>
+</li>
+<li class="about-feature-item">
+<div class="about-feature-image-wrap">
+<img class="about-feature-image" src="/images/icons/ruble.svg" alt="">
+</div>
+<div>
+<p class="about-title-text about-title-text-feature">Доступно</p>
+<p class="about-text">Бесплатные тарифы и низкая комиссия на проведение платежей.</p>
+</div>
+</li>
+ <li class="about-feature-item">
+<div class="about-feature-image-wrap">
+<img class="about-feature-image" src="/images/icons/volume.svg" alt="">
+</div>
+<div>
+<p class="about-title-text about-title-text-feature">Увеличьте охват</p>
+<p class="about-text about-text-last">Тысячи спортсменов каждый день ищут соревнование на e-Champs, возможно именно Ваше!</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column">
+<p class="about-title-text">Онлайн регистрация</p>
+<p class="about-text">Сбор предварительных заявок на участие, приём платежей и подготовка
+документов для мандатной комиссии. Регистрация всех желающих или только по приглашению.
+Задайте любые вопросы в анкете и принимайте сканы документов. Все данные собираются в личный
+кабинет и дублируются на email. Экспортируйте в нужный вам формат.</p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/online-reg-pick-min.webp" type="image/webp">
+<img class="about-image about-image-online-reg" src="/images/about/online-reg-pick-min.png" alt="" width="353">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-cards">
+<p class="about-title-text">Прием платежей (Visa/Mastercard/Apple pay/Google pay)</p>
+<p class="about-text">Принимайте взносы за участие онлайн прямо на сайте. Сбербанк является
+нашим партнером по приему платежей и обеспечивает надежный сервис 24/7. Мы работаем по
+договору и предоставляем все закрывающие документы. Быстрый вывод средств на счет или на
+карту. Минимальная комиссия. Электронные чеки согласно ФЗ-54.</p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/cards-min.webp" type="image/webp">
+<img class="about-image about-image-cards" src="/images/about/cards-min.png" alt="" width="414">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-table">
+<p class="about-title-text">Жеребьевка и турнирные сетки</p>
+<p class="about-text">Система автоматически разделит участников по возрасту\весу\разряду и
+создаст сетку. Олимпийская, круговая, система выступлений или комбинированная.
+Результаты автоматически сохраняются в профили спортсменов.</p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/table-min.webp" type="image/webp">
+<img class="about-image about-image-table" src="/images/about/table-min.png" alt="" width="345">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-table">
+<p class="about-title-text">Привлечение участников</p>
+<p class="about-text">Добавьте Ваше мероприятие на e-Сhamps и оно автоматически опубликуется на
+сайтах партнеров и попадет в топ Yandex и Google. Или закажите услугу привлечение “под ключ”
+с гарантией результата. Подключите ваши счетчики Яндекс Метрики и Google Аналитики и
+анализируйте эффективность рекламных кампаний.</p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/promote.webp" type="image/webp">
+<img class="about-image about-image-promote" src="/images/about/promote-min.png" alt="" width="328px">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-table">
+<p class="about-title-text">Профиль спортсмена</p>
+<p class="about-text">Анализируйте статистику спортивных результатов. Просматривайте текущие
+записи и планируйте выступления на будущее. Следите за рейтингом и списками топ спортсменов.
+Все это, анкетные данные, контакты и документы хранятся в личном профиле. </p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/statisticks.webp" type="image/webp">
+<img class="about-image about-image-statisticks" src="/images/about/statisticks-min.png" alt="" width="283">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-table">
+<p class="about-title-text">Интеграция с сайтом</p>
+<p class="about-text">Наш виджет позволит легко интегрировать функционал платформы на ваш сайт.
+Если у Вас еще нет сайта создайте его на e-Champs и разместите у нас или на собственном
+домене.</p>
+</div>
+<div class="about-image-wrap about-image-wrap-widget">
+<picture>
+<source srcset="/images/about/widget.webp" type="image/webp">
+<img class="about-image about-image-widget" src="/images/about/widget-min.png" alt="" width="267">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<div class="about-section-inner ">
+<div class="about-title-text-wrap about-title-text-wrap-column about-title-text-wrap-calendar">
+<p class="about-title-text">Календарь мероприятий</p>
+<p class="about-text">Все новые мероприятия автоматически попадают в общий календарь. В нем 50
+000 мероприятий по 200 видам спорта и ежемесячно им пользуются более 500 000
+спортсменов.</p>
+</div>
+<div class="about-image-wrap">
+<picture>
+<source srcset="/images/about/calendar.webp" type="image/webp">
+<img class="about-image about-image-calendar" src="/images/about/calendar-min.png" alt="" width="345">
+</picture>
+</div>
+</div>
+</section>
+<section class="about-section">
+<p class="about-title-text about-title-text-steps">Как это работает</p>
+<ul class="about-step-list">
+<li class="about-step-item">
+<div class="about-number-step-wrap about-feature-image-wrap">
+<span class="about-number-step">1</span>
+</div>
+<div>
+<p class="about-subtitle-text about-subtitle-text-steps">Добавьте Вашу организацию</p>
+<p class="about-text">Это не займет более 2 минут. Мы создазим отдельную страницу с основной информацией и календарем соревнований.</p>
+</div>
+</li>
+<li class="about-step-item">
+<div class="about-number-step-wrap about-feature-image-wrap">
+<span class="about-number-step">2</span>
+</div>
+<div>
+<p class="about-subtitle-text about-subtitle-text-steps">Опубликуйте мероприятие</p>
+<p class="about-text">Посадочная странице вашего мероприятия, удобный конструктор создания. Настройте форму сбора данных и добавьте дисциплины.</p>
+</div>
+</li>
+<li class="about-step-item">
+<div class="about-number-step-wrap about-feature-image-wrap">
+<span class="about-number-step">3</span>
+</div>
+<div>
+<p class="about-subtitle-text about-subtitle-text-steps">Получайте заявки и оплаты</p>
+<p class="about-text">Вся информация поступает в личный кабинет и на e-mail. Онлайн платежи картами Visa, Mastercard, МИР, Apple Pay и Google Pay. Быстрый вывод на счет или на на карту.</p>
+</div>
+</li>
+<li class="about-step-item">
+<div class="about-number-step-wrap about-feature-image-wrap">
+<span class="about-number-step">4</span>
+</div>
+<div>
+<p class="about-subtitle-text about-subtitle-text-steps">Создайте турнирную сетку</p>
+<p class="about-text">Система автоматически разделит участников на группы, проведет жеребьевку и создаст сетку.</p>
+</div>
+</li>
+<li class="about-step-item">
+<div class="about-number-step-wrap about-feature-image-wrap">
+<span class="about-number-step">5</span>
+<span class="about-line-step"></span>
+</div>
+<div>
+<p class="about-subtitle-text about-subtitle-text-steps">Опубликуйте результаты</p>
+<p class="about-text">Они автоматически появятся на странице мероприятия и в личном профиле каждого спортсмена.</p>
+</div>
+</li>
+</ul>
+<span class="btn-n btn-n-about btn-n-about-last">Создать соревнование</span>
+</section>
+</div>
+
+<noscript><img height="1" width="1" style="display:none"
+                       src="https://www.facebook.com/tr?id=2351395648450370&ev=PageView&agent=pltilda&noscript=1"/>
+        </noscript>
+
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-391141-fqhH4" style="position:fixed; left:-999px;" alt=""/>
+        </noscript>
+
+<link rel="stylesheet" href="/build/partners.4a1d0f6b.css">
+<div class="logo-wrap">
+<div class="arrow-logos left-arrow-logos" style="display: none"></div>
+<ul class="partner-logos partner-logos-1">
+<li class="partner-logo-wrap partner-logo-wrap-gov">
+<a href="https://minsport.gov.ru/press-centre/news/35444/">
+<img class="partner-logo-img" width="109" src="/images/sportrf.png" alt="Логотип Спорт РФ">
+</a>
+</li>
+<li class="partner-logo-wrap">
+<a href="https://norma.sport/">
+<img class="partner-logo-img" width="100" src="/images/sport_logo_white.svg" alt="Логотип компании NormaSport">
+</a>
+</li>
+</ul>
+<ul class="partner-logos partner-logos-2">
+<li class="partner-logo-wrap partner-logo-wrap-gto">
+<a href="https://www.gto.ru/">
+<img class="partner-logo-img" width="100" src="/images/gto.jpg" alt="Логотип ГТО">
+</a>
+</li>
+<li class="partner-logo-wrap">
+<a href="https://www.yandex.ru/">
+<img class="partner-logo-img" width="100" src="/images/yandex_official_logo.svg" alt="Логотип компании Яндекс">
+</a>
+</li>
+<li class="partner-logo-wrap partner-logos-wrap-rossport">
+<a href="https://rossport.info/">
+<img class="partner-logo-img" width="120" src="/images/rossport.png" alt="Логотип компании Росспорт">
+ </a>
+</li>
+</ul>
+<ul class="partner-logos partner-logos-3">
+<li class="partner-logo-wrap partner-logos-wrap-mos">
+<a href="https://умный-спорт.рф/">
+<img class="partner-logo-img" width="100" src="/images/umnisport.jpg" alt="Логотип компании Умный Спорт">
+</a>
+</li>
+<li class="partner-logo-wrap">
+<a href="https://i.moscow/">
+<svg class="partner-logos-wrap-innovation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 49" width="70">
+<g fill="none" fill-rule="evenodd">
+<g fill="#FFF" transform="translate(.5)">
+<circle cx="24.486" cy="26.43" r="8.785"></circle>
+<circle cx="24.486" cy="5.869" r="5.869"></circle>
+<circle cx="36.224" cy="42.953" r="5.869"></circle>
+<circle cx="5.869" cy="35.215" r="5.869"></circle>
+<circle cx="42.71" cy="29.327" r="4.393"></circle>
+<path fill-rule="nonzero" d="M23.54 25.64l.77 1.58-18.056 8.785-.77-1.58z"></path>
+<path fill-rule="nonzero" d="M36.797 42.546l-1.146.814-11.868-16.706V5.87h1.406v20.336z"></path>
+<path fill-rule="nonzero" d="M24.376 27.124l.22-1.389 18.225 2.897-.221 1.39z"></path>
+</g>
+<g fill="#000" transform="translate(23.58 20.571)">
+<circle cx="1.35" cy="1.35" r="1.35"></circle>
+<path d="M.45 3.985h1.8v7.004H.45z"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="partner-logo-wrap partner-logos-wrap-mos">
+<a href="https://data-economy.ru/regions?s_recid=178580496&s_charact%3A216653=%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F+%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0+%D0%B8+%D1%81%D0%BF%D0%BE%D1%80%D1%82">
+<img class="partner-logo-img" width="100" src="/images/data-economy.png" alt="Логотип компании Дата-Экономика">
+</a>
+</li>
+</ul>
+<div class="arrow-logos right-arrow-logos"></div>
+</div>
+<script>
+    let slideNumber = 0;
+    let slidesLogo = document.querySelectorAll('.partner-logos');
+    let logoWrap = document.querySelector('.logo-wrap');
+    let leftArrowLogos = document.querySelector('.left-arrow-logos');
+    let rightArrowLogos = document.querySelector('.right-arrow-logos');
+    let btnsArrowLogo = document.querySelectorAll('.arrow-logos');
+    arr = [];
+
+    function touchHandler(position) {
+        arr.push(position);
+    }
+
+    function moveLogos(arr, btns) {
+        if (arr) {
+            if (arr[0] > arr[1]) {
+                slideNumber++;
+                if (slideNumber >= 2) {
+                    slideNumber = 2;
+                    rightArrowLogos.style.display = 'none';
+                } else {
+                    rightArrowLogos.style.display = 'block';
+                    leftArrowLogos.style.display = 'block';
+                }
+            } else if (arr[0] < arr[1]) {
+                slideNumber--;
+                if (slideNumber <= 0) {
+                    slideNumber = 0;
+                    leftArrowLogos.style.display = 'none';
+                } else {
+                    rightArrowLogos.style.display = 'block';
+                    leftArrowLogos.style.display = 'block';
+                }
+            }
+        } else {
+            if (btns.classList.contains('left-arrow-logos')) {
+                slideNumber--;
+                if (slideNumber <= 0) {
+                    slideNumber = 0;
+                    leftArrowLogos.style.display = 'none';
+                } else {
+                    rightArrowLogos.style.display = 'block';
+                    leftArrowLogos.style.display = 'block';
+                }
+            } else {
+                slideNumber++;
+                if (slideNumber >= 2) {
+                    slideNumber = 2;
+                    rightArrowLogos.style.display = 'none';
+                } else {
+                    rightArrowLogos.style.display = 'block';
+                    leftArrowLogos.style.display = 'block';
+                }
+            }
+        }
+
+        if (slideNumber === 0) {
+            slidesLogo[0].style.left = '0';
+            slidesLogo[1].style.left = '100%';
+            slidesLogo[2].style.left = '100%';
+        } else if (slideNumber === 1) {
+            slidesLogo[0].style.left = '-100%';
+            slidesLogo[1].style.left = '0';
+            slidesLogo[2].style.left = '100%';
+        } else if (slideNumber === 2) {
+            slidesLogo[0].style.left = '-100%';
+            slidesLogo[1].style.left = '-100%';
+            slidesLogo[2].style.left = '0';
+        }
+    }
+
+    logoWrap.addEventListener('touchstart', function (e) {
+        touchHandler(e.targetTouches[0].clientX);
+    })
+    logoWrap.addEventListener('touchend', function (e) {
+        touchHandler(e.changedTouches[0].clientX);
+        moveLogos(arr);
+        arr = [];
+    })
+
+    function btnsArrowLogoHandler(btnsArrowLogo) {
+        btnsArrowLogo.addEventListener('click', function () {
+            moveLogos(null, btnsArrowLogo);
+        })
+    }
+
+    for (let i = 0; i < btnsArrowLogo.length; i++) {
+        btnsArrowLogoHandler(btnsArrowLogo[i]);
+    }
+</script>
+<div class="about-form-wrap">
+<form class="about-form" type="POST" action="">
+<div class="about-form-toggle">
+<p class="about-form-title">Узнайте, что еще вы сможете получить от e-Champs</p>
+<p class="about-form-text">Оставьте телефон, и мы расскажем о возможностях платформы, ответим
+на
+ваши вопросы</p>
+<div class="about-form-input-wrap">
+<input class="about-input" type="number" placeholder="Ваш номер телефона">
+<button class="btn-n about-form-btn" type="submit">Узнать</button>
+</div>
+<p class="about-form-text d-none about-form-text-error text-danger about-form-input-wrap">Введите номер в формате +7 999 888 77 66</p>
+<small class="about-form-subtext">Нажимая на кнопку «Узнать», вы принимаете условия
+Пользовательского соглашения</small>
+</div>
+<div class="about-form-toggle d-none">
+<p class="about-form-title">Совсем скоро вы все узнаете!</p>
+<p class="about-form-text ">Мы получили вашу заявку и в ближайшее время свяжемся с вами для
+консультации</p>
+<button class="btn-n about-form-btn-repeat-offer" type="button">Повторная заявка</button>
+</div>
+<div class="about-form-back">
+</div>
+<div class="about-form-inner">
+</div>
+</form>
+</div>
+<div class="connect-form-back d-none"></div>
+<div class="about-form-wrap connect-form d-none">
+<span class="connect-form-close">X</span>
+<form class="about-form contact-form" type="POST" action="">
+<div class="about-form-toggle">
+<p class="about-form-title">Начните привлекать участников и продавать больше, используя современные онлайн инструменты</p>
+<div class="about-form-input-wrap connect-form-input-wrap">
+<input class="about-input connect-form-input" type="text" placeholder="Ваше имя">
+</div>
+<div class="about-form-input-wrap">
+<input class="about-input" type="number" placeholder="Ваш номер телефона">
+<button class="btn-n about-form-btn" type="submit">Далее</button>
+</div>
+<p class="about-form-text d-none about-form-text-error text-danger about-form-input-wrap">Введите номер в формате +7 999 888 77 66</p>
+<small class="about-form-subtext">Нажимая на кнопку «Подключиться», вы принимаете условия
+Пользовательского соглашения</small>
+</div>
+<div class="about-form-toggle d-none">
+<p class="about-form-title ">Мы получили вашу заявку и в ближайшее время свяжемся с вами</p>
+<a class="w-100 d-flex justify-content-center no-decoration-hover" href="/event/create"><button class="btn-n" type="button">Продолжить</button></a>
+</div>
+<div class="about-form-back">
+</div>
+<div class="about-form-inner">
+</div>
+</form>
+</div>
+</div>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e40f0e4fe293a55',m:'1cgWopyF3NtzuHTdqmxc6MGsSXFx7_gbNoZ4gthfdGk-1645959957-0-AVbexrtV5fgRwYSJuf1zeXoEbfpIpl4dywIfDdobiZKUhVdJ9C5cKoy4VktpQDIbTPBDFNmQckOjBDL89Kz7UGsdswvuuHN3zwuhlq1usDlBIoeTlKl1CCQQwtXN4V7bKw==',s:[0xc4c8206892,0xc48b2a811f],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6e40f0e4fe293a55","token":"9db3de6c25814716a9d08c5ac7d903d6","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+<script src='https://cdn.polyfill.io/v3/polyfill.min.js'></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdbZOIUAAAAAPKmbbxjfoeFDPsNajCPexJY5B-c"></script>
+<script src="/build/runtime.8defc9e9.js"></script><script src="/build/app.f0f747bd.js"></script>
+<script src="/build/auth.9bc4d175.js"></script>
+<script src="/build/about.530bd5e5.js"></script>
+
+<script type="text/javascript">
+            var fired = false;
+
+            window.addEventListener('scroll', () => {
+                if (fired === false) {
+                    fired = true;
+
+                    setTimeout(() => {
+                        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                        ym(49974598, "init", {
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true,
+                            params: { ip: '172.68.10.59' }
+                        });
+                    }, 1000)
+                }
+            });
+        </script>
+<noscript><div><img src="https://mc.yandex.ru/watch/49974598" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107517937-2"></script>
+<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-107517937-2');
+        </script>
+
+<script type="text/javascript">
+            var fired = false;
+
+            window.addEventListener('scroll', () => {
+                if (fired === false) {
+                    fired = true;
+
+                    setTimeout(() => {
+                        var _tmr = window._tmr || (window._tmr = []);
+                        _tmr.push({id: "3080087", type: "pageView", start: (new Date()).getTime()});
+                        (function (d, w, id) {
+                            if (d.getElementById(id)) return;
+                            var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+                            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+                            var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+                            if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+                        })(document, window, "topmailru-code");
+                    }, 1000)
+                }
+            });
+        </script>
+
+<!--[if !IE]><!-->
+<link rel="stylesheet" href="/build/footer.bf522c3c.css">
+<div class="footer">
+<div class="container footer-grid
+">
+<div class="footer-col">
+<a href="#">
+<img width="170px" src="/images/tilda-logo-footer.png" alt="Логотип компании E-champs">
+</a>
+
+<div class="footer-social-links">
+<a href="https://facebook.com/echamps.me" target="_blank" class="media-icon"><i class="fab fa-facebook facebook-i"></i></a>
+<a href="https://vk.com/echamps" target="_blank" class="media-icon"><i class="fab fa-vk vk-i"></i></a>
+<a href="https://wa.me/79774902317" target="_blank" class="media-icon"><i class="fab fa-whatsapp whatsapp-i"></i></a>
+<a href="https://www.instagram.com/_echamps_/" target="_blank" class="media-icon"><i class="fab fab fa-instagram instagram-i"></i></a>
+</div>
+
+<script type="text/javascript">
+    document.write('<a href="//www.liveinternet.ru/click" '+
+        'target="_blank"><img src="//counter.yadro.ru/hit?t54.1;r'+
+        escape(document.referrer)+((typeof(screen)=='undefined')?'':
+            ';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+        ';h'+escape(document.title.substring(0,150))+';'+Math.random()+
+        '" alt="" title="LiveInternet: показано число просмотров и'+
+        ' посетителей за 24 часа" '+
+        'border="0" width="88" height="31"><\/a>')
+</script>
+<div class="subtext copyright">Этот сайт защищен reCAPTCHA, применяются <a href="https://policies.google.com/privacy">Политика конфиденциальности</a> и <a href="https://policies.google.com/terms">Условия обслуживания</a> Google.</div>
+<span class="subtext copyright">© 2022 Champs LLC, ООО ЧЕМПС</span>
+</div>
+<div class="footer-col">
+<a class="link-new link-new-black link-new-small footer-link footer-title-list" href="/login" style="">Вход</a>
+<ul>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/calendars" style="">Календарь</a></li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/organization/create" onclick="yaCounter49974598.reachGoal('create-org'); return true;">Добавить организацию</a>
+</li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/event/create" onclick="yaCounter49974598.reachGoal('create-event'); return true;">Добавить мероприятие</a></li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/insurance" style="">Оформить страховку</a>
+</li>
+</ul>
+</div>
+<div class="footer-col">
+<a class="link-new link-new-black link-new-small footer-link footer-title-list" href="/news">
+ PROСПОРТ
+</a>
+<ul>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/community">Сообщество</a></li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/organizations">Организации</a>
+</li>
+
+<li><a class="link-new link-new-black link-new-small footer-link" href="
+                                                                        https://sport.e-champs.com/rates
+                                                                        " style="">Тарифы</a></li>
+
+<li><a class="link-new link-new-black link-new-small footer-link" href="/data/calendar/russia/regions" role="button">Сводная таблица</a>
+</ul>
+</div>
+<div class="footer-col">
+<span class="link-new link-new-black link-new-small footer-link footer-unlink footer-title-list">Информация</span>
+<ul>
+<li><a class="link-new link-new-black link-new-small footer-link" href="/user-agreement" style="">Политика конфиденциальности</a></li>
+
+<li><a class="link-new link-new-black link-new-small footer-link" href="https://sport.e-champs.com/offer-agreement" style="">Оферта</a></li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="https://sport.e-champs.com/oplata" style="">Условия оплаты</a></li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="
+                                                                        https://sport.e-champs.com/contacts-ru
+                                                                        " style="">Контакты</a>
+</li>
+<li><a class="link-new link-new-black link-new-small footer-link" href="https://sport.e-champs.com/faq" style="">FAQ</a></li>
+
+</ul>
+</div>
+
+<noscript><img height="1" width="1" style="display:none"
+                       src="https://www.facebook.com/tr?id=2351395648450370&ev=PageView&agent=pltilda&noscript=1"/>
+        </noscript>
+
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-391141-fqhH4" style="position:fixed; left:-999px;"
+                       alt=""/></noscript>
+
+</div>
+</div> <!-- <![endif]-->
+<div class="modal fade" id="auth-container-modal" tabindex="-1" role="dialog" aria-labelledby="Auth" aria-hidden="true">
+<div class="modal-dialog modal-width" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<div class="container">
+
+<div class="modal fade" id="recaptcha-error-modal" tabindex="-1" role="dialog" aria-labelledby="recaptcha-error-modal-label" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<div class="mx-2 row">Не загружана библиотека Recaptcha, возможно она заблокирована расширением браузера, отключите расширение и перезагрузите страницу. Если не помогло - напишите нам <a href="/cdn-cgi/l/email-protection#becdced1cccafedb93ddd6dfd3cecd90ddd1d3"><span class="__cf_email__" data-cfemail="6e1d1e011c1a2e0b430d060f031e1d400d0103">[email&#160;protected]</span></a></div>
+<div class="mx-2 row mt-3 justify-content-center">
+<button type="button" class="btn-register-to-event btn ech-bnt-bigger" data-dismiss="modal">Закрыть
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex justify-content-center newuiclass">
+<div class="inner">
+<div id="auth-success" class="subtitle alert color-black">
+</div>
+<div id="auth-error" class="mb-2"></div>
+<div id="auth-error-2" class="mb-2 d-none alert alert-danger">Проблема в устаревших cookie файлах браузера. Очистите их чтобы авторизоваться. Зайдите в настройки браузера- Конфиденциальность - Файлы cookie. Удалить файл cookie для e-Champs.com либо все файлы cookie</div>
+<button type="button" class="btn-n d-none centered-button" id="continue-button" data-activate-link="">Продолжить</button>
+<button type="button" class="btn-n d-none centered-button" id="clear-cookie" data-activate-link="">Очистить</button>
+<div class="row social-registration-row-one">
+<div class="col mb-3">Войти через </div>
+</div>
+<div class="login-social-wrap social-registration-row-two">
+<div>
+<button class="btn vk-auth-btn"><img src="/images/vk-login-icon.svg" alt="vkontakte logo" class="social-logo"> </button>
+</div>
+<div>
+<button class="btn yandex-auth-btn"><img src="/images/yandex-login-icon.svg" alt="yandex logo" class="social-logo"></button>
+</div>
+<div>
+<button class="btn fb-auth-btn"><img src="/images/facebook-login-icon.svg" alt="facebook logo" class="social-logo"></button>
+</div>
+<div>
+<button class="btn google-auth-btn"><img src="/images/google-login-icon.svg" alt="google logo" class="social-logo"></button>
+</div>
+</div>
+<div class="row social-registration-row-three">
+<div class="col my-3"> или </div>
+</div>
+<div id="formTabsGroups" class="tabs mb-2">
+<li>
+<ul class="nav nav-tabs" id="formTabs" role="tablist">
+<li>
+<a class="nav-link d-none" id="resetting-request-tab" data-toggle="tab" href="#resetting-request-fields" role="tab" aria-controls="resetting-request-fields" aria-selected="false">Сбросить пароль</a>
+<a class="btn-n btn-n-secondary" id="login-tab" data-toggle="tab" href="#login-fields" role="tab" aria-controls="login-fields" aria-selected="false">Войти</a>
+</li>
+<li class="login-reg-btns-item">
+<a class="btn-n login-reg-btn btn-n-secondary active" id="register-tab" data-toggle="tab" href="#register-fields" role="tab" aria-controls="register-fields" aria-selected="true">Регистрация</a>
+</li>
+</ul>
+</li>
+</div>
+<div class="tab-content" id="formTabsContent">
+<div class="tab-pane fade" id="resetting-request-fields" role="tabpanel" aria-labelledby="resetting-request-tab">
+<form action="/resetting-request" method="post" id="resetting-request-form" data-is-recaptcha-enabled="1">
+<input type="hidden" name="_target_path" value="https://e-champs.com/" />
+<input type="hidden" name="_csrf_token" value="gM2WlnoxPNuz-T8tHIiMVC6RPngIuwIvO3JrRb1VrAw" />
+<input type="hidden" name="_google_token" id="google-token-register-reset-pass" value="" />
+<div class="list-group fields">
+<li class="list-group-item">
+<input type="email" required id="resetting-email" name="resetting-email" value="" class="form-control" placeholder="E-mail *" />
+</li>
+</div>
+<div id="resetting-pass-recaptcha-error"></div>
+<button id="resetting-request-button" type="submit" class="btn ech-btn mt-2 mb-5">Сбросить пароль</button>
+</form>
+</div>
+<div class="tab-pane fade" id="login-fields" role="tabpanel" aria-labelledby="login-tab">
+<form action="/login" method="post" id="sign-in-form">
+<input type="hidden" name="_target_path" value="https://e-champs.com/" />
+<input type="hidden" name="_csrf_token" value="tGmCntlf4PkRDSSO3wvDc18Kz27YxAzsI6H_47xrXH0" />
+<div class="list-group fields">
+<li class="login-input-item">
+<input class="input-n login-input-n" type="text" id="email" name="email" value="" placeholder="E-mail *" />
+</li>
+<li class="login-input-item">
+<input class="input-n login-input-n" type="password" id="password" name="password" placeholder="Пароль *" />
+</li>
+</div>
+<div class="links-line">
+<div class="form-check">
+<input class="form-check-input d-none" type="checkbox" name="_not_remember" id="not_remember">
+<label class="form-check-label login-form-check-input  d-none" for="not_remember">Чужой компьютер</label>
+</div>
+<a class="link-new link-new-small" id="resetting-request-link" href="#resetting-request-fields">Забыли пароль?</a>
+</div>
+<div id="clear-cookie-message" class="d-none mb-2">Если вы испытываете проблемы при входе - удалите cookies.</div>
+<button id="sign-in-button" type="submit" class="btn-n login-btn-reg login-btn-reg-second">Войти</button>
+</form>
+</div>
+<div class="tab-pane fade show active" id="register-fields" role="tabpanel" aria-labelledby="register-tab">
+
+<form action="/register" method="post" id="sign-up-form" class="needs-validation" data-is-recaptcha-enabled="1">
+<input type="hidden" name="registration_form[_target_path]" value="https://e-champs.com/" />
+<input type="hidden" name="registration_form[_token]" value="OMgI1pPQ8FscYXkFTviCknc6qFO9HHpyRNCmKNarnZU" />
+<input type="hidden" name="registration_form[_from_where]" value="https://e-champs.com/_fragment?_path=_format%3Dhtml%26_locale%3Dru%26_controller%3DApp%255CController%255CAuthenticationController%253A%253Aauth" />
+<input type="hidden" name="registration_form[_google_token]" id="google-token-register" value="" />
+<div class="list-group fields">
+<li class="login-input-item">
+<input class="input-n login-input-n" type="text" id="register-lastname" name="registration_form[lastname]" placeholder="Фамилия *" />
+</li>
+<li class="login-input-item">
+<input class="input-n login-input-n" type="text" id="register-firstname" name="registration_form[firstname]" placeholder="Имя *" />
+</li>
+<li class="login-input-item">
+ <input class="input-n login-input-n" type="text" id="register-username" name="registration_form[email]" value="" placeholder="E-mail *" />
+</li>
+<li class="login-input-item">
+<input class="input-n login-input-n" type="password" id="register-password" name="registration_form[plainPassword]" placeholder="Придумайте пароль *" />
+</li>
+</div>
+<div id="register-recaptcha-error"></div>
+<div class="mt-2 mt-md-0 form-check login-user-argreement-wrap">
+<input class="form-check-input" type="checkbox" checked value="1" id="user_argreement" name="user_argreement">
+<label class="form-check-label" for="user_argreement">Я согласен с <a href="/user-agreement" target="_blank">пользовательским соглашением</a> и даю согласие на обработку персональных данных</label>
+</div>
+<button type="button" disabled class="btn-n login-btn-reg login-btn-reg-second" id="sign-up-button">Регистрация</button> </form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

@@ -1,0 +1,629 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ВАЖНО</title>
+<meta name="description" content="">
+<script src="/cdn-cgi/apps/head/1ZF7jKepK4G6CVAX5mL99gIad4A.js"></script><link rel="icon" type="image/png" href="/public/static/shell_vazhno_next/img/icon.png">
+<link rel="dns-prefetch" href="//g.news-network.ru">
+<link rel="dns-prefetch" href="//thumb-g.news-network.ru">
+<link rel="dns-prefetch" href="//media-g.news-network.ru">
+<link rel="dns-prefetch" href="https://cdn.polyfill.io">
+<link rel="dns-prefetch" href="https://unpkg.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://yastatic.net">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,900&subset=cyrillic">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/magnific-popup@1.1.0/dist/magnific-popup.css">
+<link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+<link rel="stylesheet" href="/public/static/shell_vazhno_next/css/style.css?v=20190519">
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="//g.news-network.ru/chebu-client/chebu-client.min.js?v=20171125"></script>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/fontfaceonload@1.0.2/dist/fontfaceonload.js"></script>
+<script src="https://unpkg.com/textfit@2.3.1/textFit.min.js"></script>
+<script src="https://unpkg.com/stickybits@2.0.2/dist/jquery.stickybits.min.js"></script>
+<script src="https://unpkg.com/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+<script src="https://yastatic.net/pcode/adfox/loader.js"></script>
+<script charset="UTF-8" src="//web.webpushs.com/js/push/45d8744d3d87eb4905062f9eb9bf6faa_1.js" async></script>
+<meta property="fb:app_id" content="496207174070630">
+<meta property="og:site_name" content="">
+<meta property="og:url" content="https://www.vazhno.ru/">
+<meta property="og:title" content="ВАЖНО">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<meta property="og:locale:locale" content="ru_ru">
+<link rel="canonical" href="https://www.vazhno.ru/">
+</head>
+<body class="">
+<script>
+
+    // Init chebu-client
+    
+      var _cc = chebuClient(
+        '//g.news-network.ru/api/v1/te/',
+        '//g.news-network.ru/api/v1/ga/',
+        'http://media-g.news-network.ru/',
+        '//thumb-g.news-network.ru/unsafe/'
+      );
+    
+
+    // Send page view
+    _cc.trackEvent({
+      name: 'pv',
+      site_id: 5
+    });
+
+  </script>
+<script type="text/x-template" id="template-gena_slot_perf">
+  <div v-if="meta.user_is_superuser" class="gena_slot_perf">
+    <table style="width: 100%;">
+      <tr>
+        <th>Цена</th>
+        <th>С/С/РС</th>
+      </tr>
+      <tr>
+        <td>
+          {{ (ads.map(ad => ad.is_tested ? ad.score * 1000 / 100 : 0).reduce((acc, adScore) => acc + adScore, 0)).toFixed(2) }}
+        </td>
+        <td>
+            <a
+                    :href="'https://g.news-network.ru/analytics/site-page-slot-debug/?site_id=' + meta.site_id + '&page_id=' + meta.page_id + '&slot_id=' + meta.slot_id"
+                    target="_blank">{{ meta.site_id }}/{{ meta.page_id }}/{{ meta.slot_id }} ❯</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</script>
+<style>
+  .gena_slot_perf {
+    font-size: 11px;
+    background-color: lightblue;
+  }
+</style>
+<script>
+  Vue.component('gena-slot-perf', {
+    template: '#template-gena_slot_perf',
+    props: ['meta', 'ads']
+  });
+</script>
+<script type="text/x-template" id="template-gena_unit_perf">
+  <div v-if="meta.user_is_superuser" class="gena_unit_perf">
+    <table style="width: 100%;">
+      <tr>
+        <th>Score</th>
+        <th>CTR_1K</th>
+        <th>CTR</th>
+        <th>CPC</th>
+        <th>РК/РЮ</th>
+      </tr>
+      <tr>
+        <td>
+          <span v-if="ad.is_tested" style="color: mediumseagreen;">
+            {{ (ad.score * 1000 / 100).toFixed(2) }}
+          </span>
+        </td>
+        <td>
+          <span v-if="ad.ac_tail_counter && ad.ai_tail_counter" style="color: mediumseagreen;">
+            {{ (ad.ac_tail_counter / ad.ai_tail_counter * 100).toFixed(2) }}%
+          </span>
+          {{ ad.ac_tail_counter || 0 }}/{{ ad.ai_tail_counter || 0 }}
+        </td>
+        <td>
+          <span v-if="ad.ac_lifetime_counter && ad.ai_lifetime_counter" style="color: mediumseagreen;">
+            {{ (ad.ac_lifetime_counter / ad.ai_lifetime_counter * 100).toFixed(2) }}%
+          </span>
+          {{ ad.ac_lifetime_counter || 0 }}/{{ ad.ai_lifetime_counter || 0 }}
+        </td>
+        <td>{{ (ad.cpc || ad.campaign_cpc) / 100 }}</td>
+        <td>{{ ad.campaign_id }}/{{ ad.id }}</td>
+      </tr>
+    </table>
+  </div>
+</script>
+<style>
+  .gena_unit_perf {
+    font-size: 10px;
+    background-color: aliceblue;
+  }
+</style>
+<script>
+  Vue.component('gena-unit-perf', {
+    template: '#template-gena_unit_perf',
+    props: ['meta', 'ad']
+  });
+</script>
+
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(46598883, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/46598883" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-184200387-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-184200387-1');
+</script>
+
+<script type="text/javascript">
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "429409", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "topmailru-code");
+</script><noscript><div>
+<img src="https://top-fwz1.mail.ru/counter?id=429409;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</div></noscript>
+
+<header class="page_header vn_bg-blue-dark vn_shadow">
+<nav class="navbar navbar-vn vn_border-none">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="/?from=nav">
+<span class="vn_bg-rainbow" style="padding: 2px 0;">
+<span class="vn_bg-blue-dark" style="margin-right: -3px; letter-spacing: 4px;">
+ВАЖНО
+</span>
+</span>
+</a>
+</div>
+<p class="navbar-text vn_text-white">27 февраля 2022</p>
+<ul class="navbar-nav navbar-right nav">
+<li><a href="/t/russia/?from=nav">Россия</a></li>
+<li><a href="/t/world/?from=nav">Мир</a></li>
+<li><a href="/t/life/?from=nav">Жизнь</a></li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="xa-h xa-h-01 hidden-xs" style="min-height: 90px;">
+<div class="container">
+
+
+
+<div id="adfox_149433490612788017"></div>
+<script>
+      window.Ya.adfoxCode.create({
+        ownerId: 242477,
+        containerId: 'adfox_149433490612788017',
+        params: {
+          p1: 'bxbyp',
+          p2: 'fpld'
+        }
+      });
+    </script>
+</div>
+</div>
+<main class="page_main">
+<section class="page_main__section">
+<div class="container">
+<div class="row">
+<div class="col-md-9 col-xs-12">
+<div class="row">
+<div class="col-md-8 col-xs-12">
+<a href="/a/98711/20220224/sberbank-obratilsya-k-rossiyanam/ab-clean/" class="article_preview vn_block" style="height: 530px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220224/0849/28ihak/c627f10200e0fbb4a7d5a72dc108c87f.jfif" alt="" width="600" height="360" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Сбербанк обратился к россиянам
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-4 col-xs-12">
+<a href="/a/98839/20220225/chernobylskuyu-aes-zanyali-rossijskie-desantniki/ab-clean/" class="article_preview vn_block" style="height: 250px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0836/28ubeg/875b8472b1b76f1d3bee173f12cee306.jpg" alt="" width="300" height="150" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Чернобыльскую АЭС заняли российские десантники
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+<a href="/a/98833/20220225/evrosoyuz-ostavit-rossiyu-bez-samoletov/ab-clean/" class="article_preview vn_block" style="height: 250px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0718/00aqkw/0ee7cf56fde5567316c96bc2028c6cd8.jpg" alt="" width="300" height="150" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Евросоюз оставит Россию без самолетов
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-xs-12">
+<a href="/a/98830/20220225/bajden-u-menya-net-planov-razgovarivat-s-putinym/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0703/06urhn/7235b0b85e41f3213c47475c42150dc4.jpg" alt="" width="600" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Байден: У меня нет планов разговаривать с Путиным
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-6 col-xs-12">
+<a href="/a/98849/20220225/taliby-obratilis-k-rossii-s-prizyvom-iz-za-ukrainy/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0940/35nbgd/d851f6298fd6c70d819874a14ccb7140.jpg" alt="" width="600" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Талибы обратились к России с призывом из-за Украины
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-md-3 hidden-xs js-sticky-top">
+<div class="xa-v xa-v-01" style="min-height: 400px;">
+
+
+
+<div id="adfox_149433461833371255"></div>
+<script>
+    window.Ya.adfoxCode.create({
+      ownerId: 242477,
+      containerId: 'adfox_149433461833371255',
+      params: {
+        p1: 'bxbyr',
+        p2: 'fplf'
+      }
+    });
+  </script>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="xa-h xa-h-02 hidden-xs" style="min-height: 250px; padding: 0;">
+<div class="container">
+
+
+
+<div id="adfox_149433502887854105"></div>
+<script>
+      window.Ya.adfoxCode.create({
+        ownerId: 242477,
+        containerId: 'adfox_149433502887854105',
+        params: {
+          p1: 'bxbyt',
+          p2: 'fpld'
+        }
+      });
+    </script>
+</div>
+</div>
+<section class="page_main__section">
+<div class="container">
+<div class="row">
+<div class="col-md-3 hidden-xs js-sticky-top">
+<div class="xa-v xa-v-02" style="min-height: 400px;">
+
+
+
+<div id="adfox_149433471581757859"></div>
+<script>
+    window.Ya.adfoxCode.create({
+      ownerId: 242477,
+      containerId: 'adfox_149433471581757859',
+      params: {
+        p1: 'bxbys',
+        p2: 'fplf'
+      }
+    });
+  </script>
+</div>
+</div>
+<div class="col-md-9 col-xs-12">
+<div class="row">
+<div class="col-md-8 col-xs-12">
+<a href="/a/98865/20220225/prezident-sirii-pogovoril-s-putinym-i-oboznachil-svoyu-poziciyu/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1140/24zjtx/eaa01681211a9708bfab75811aa2bbdd.jpeg" alt="" width="600" height="250" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Президент Сирии поговорил с Путиным и обозначил свою позицию
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-4 col-xs-12">
+<a href="/a/98846/20220225/televedushaya-tatyana-lazareva-rasskazala-o-situacii-v-kieve/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0924/20hxsw/d15280276956b5cffb2b2af44333c11d.jpg" alt="" width="300" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Телеведущая Татьяна Лазарева рассказала о ситуации в Киеве
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<a href="/a/98831/20220225/koncerty-rossijskih-zvezd-otmenili-v-ssha/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/0706/29ypwr/8048a2ac1d04af589694bb7ef25fe4e5.jpg" alt="" width="300" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Концерты российских звезд отменили в США
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-8 col-xs-12">
+<a href="/a/98875/20220225/putin-sdelal-zayavlenie-si-czinpinu-po-ukraine/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1257/22sfmd/b1355b129c584b2b27ff00d94135483b.jpg" alt="" width="600" height="250" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Путин сделал заявление Си Цзиньпину по Украине
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-xs-12">
+<a href="/a/98883/20220225/zelenskij-zaprosil-u-putina-skorye-peregovory/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1408/28csro/bde2ce5ed3a29a591f2076872cdfb225.jpeg" alt="" width="600" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Зеленский запросил у Путина скорые переговоры
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-6 col-xs-12">
+<a href="/a/98873/20220225/vystupivshego-protiv-operacii-na-ukraine-urganta-snyali-s-efira/ab-clean/" class="article_preview vn_block" style="height: 400px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1247/14vdri/f5e3f303d7ee7f6ed477aaf4c764f6b3.jpg" alt="" width="600" height="300" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Выступившего против операции на Украине Урганта сняли с эфира
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-xs-12">
+<a href="/a/98856/20220225/obyavleno-o-problemah-s-bankovskimi-kartami-rossiyan/ab-clean/" class="article_preview vn_block" style="height: 300px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1122/23lxhq/3eb2ea4a481c0b6d448378373697fc93.png" alt="" width="300" height="200" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Объявлено о проблемах с банковскими картами россиян
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-4 col-xs-12">
+<a href="/a/98871/20220225/kadyrov-potreboval-ot-zelenskogo-izvinitsya-pered-putinym/ab-clean/" class="article_preview vn_block" style="height: 300px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1220/24qdpv/379733c20d8c1887f176d17c85f0e1ea.jpg" alt="" width="300" height="200" class="img-responsive">
+ </figure>
+<div class="article_preview__title" style="width: 100%;">
+Кадыров потребовал от Зеленского извиниться перед Путиным
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+<div class="col-md-4 col-xs-12">
+<a href="/a/98891/20220225/klichko-sdelal-zayavlenie-ob-oborone-kieva/ab-clean/" class="article_preview vn_block" style="height: 300px;">
+<figure class="article_preview__image">
+<img src="/public/media/CACHE/images/elcitra_eroc/20220225/1518/53iomw/587f9506c8a29d4050c970bcd1c97492.jpeg" alt="" width="300" height="200" class="img-responsive">
+</figure>
+<div class="article_preview__title" style="width: 100%;">
+Кличко сделал заявление об обороне Киева
+</div>
+<div class="article_preview__cta">
+<span class="btn btn-vn">Подробнее</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="xa-h xa-h-03 hidden-xs" style="min-height: 250px;">
+<div class="container">
+
+
+
+<div id="adfox_149433508910991476"></div>
+<script>
+      window.Ya.adfoxCode.createScroll({
+        ownerId: 242477,
+        containerId: 'adfox_149433508910991476',
+        params: {
+          p1: 'bxbyv',
+          p2: 'fpld'
+        }
+      });
+    </script>
+</div>
+</div>
+<footer class="page_footer vn_bg-blue-dark">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<div style="padding: 30px 0;">
+<div style="margin-bottom: 10px; font-size: 16px; font-weight: 500; color: #fff;">
+О проекте
+</div>
+<div>
+"Важно.Ру" — информационный ресурс для русскоязычного населения стран Балтии. Мы предлагаем
+обзор главных мировых событий дня в области политики, экономики, общественной жизни, а также
+популярных интернет-трендов. “Важно.Ру” является частным независимым изданием, не отражает
+позицию какой-либо из политических сил и следует критериям информационной объективности.
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div style="padding: 30px 0;">
+<div style="margin-bottom: 10px; font-size: 16px; font-weight: 500; color: #fff;">
+Использование материалов
+</div>
+<div>
+Все материалы на сайте "Важно.Ру" являются объектами авторского права и охраняются
+международным законодательством. Использование текстовых материалов "Важно.Ру" другими
+изданиями допускается при обязательном указании ссылки на источник. За разрешением на
+использование фото- и видеоматериалов, предоставленных третьими сторонами, следует
+обращаться непосредственно к правообладателям, наименования которых указаны в месте
+публикации материала.
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div style="padding: 30px 0;">
+<div style="margin-bottom: 10px; font-size: 16px; font-weight: 500; color: #fff;">Контакты</div>
+<a href="/ajax-feedback-form/" class="btn btn-vn js-mp-ajax">Написать нам</a>
+</div>
+<div>
+<script type="text/javascript">
+document.write("<a href='//www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t45.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,150))+";"+Math.random()+
+"' alt='' title='LiveInternet' "+
+"border='0' width='31' height='31'><\/a>")
+</script>
+
+<script type="text/javascript">
+    (function (a, d, s) {
+        var o = a.createElement(d);
+        o.src = s;
+        o.async = 1;
+        a.head.appendChild(o);
+        o.onload = function () {
+            rw(6598);
+        }
+    })
+    (document, "script", "https://ads.red/static/rsswatch.min.js");
+</script>
+
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+
+    $(document).ready(function() {
+
+      FontFaceOnload('Roboto', {
+        success: function() {
+          if ($(window).width() < 992) {
+            return
+          }
+          $('.article_preview').each(function() {
+            var $article = $(this);
+            var articleH = $article.height();
+            var $img = $(this).find('.article_preview__image img');
+            var imgH = $article.width() / $img.attr('width') * $img.attr('height');
+            var $cta = $article.find('.article_preview__cta');
+            var ctaH = $cta.height();
+            var $title = $(this).find('.article_preview__title');
+            $title.height(articleH - imgH - ctaH);
+            textFit($title, {
+              alignVert: false,
+              alignHoriz: false,
+              multiLine: true,
+              detectMultiLine: true,
+              minFontSize: 18,
+              maxFontSize: 50,
+              reProcess: true,
+              widthOnly: false,
+              alignVertWithFlexbox: true
+            });
+          });
+        }
+      });
+
+      $('.js-sticky-top').stickybits({
+        useStickyClasses: true,
+        stickyBitStickyOffset: 10
+      });
+
+      $('.js-sticky-bottom').stickybits({
+        useStickyClasses: true,
+        verticalPosition: 'bottom'
+      });
+
+      $('.js-mp-ajax-image').magnificPopup({
+        type: 'ajax',
+        showCloseBtn: true,
+        closeBtnInside: false,
+        gallery: {
+          enabled: true
+        }
+      });
+
+      $('.js-mp-ajax').magnificPopup({
+        type: 'ajax',
+        showCloseBtn: true,
+        closeBtnInside: false
+      });
+
+    });
+  </script>
+</body>
+</html>
