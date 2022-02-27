@@ -3,7 +3,7 @@ import requests, os
 
 class Generator:
     def __init__(self):
-        self.search_query = 'новости'
+        self.search_query = 'спорт'
         self.max_requests = 6
 
     def generate(self):
