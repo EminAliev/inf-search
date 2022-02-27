@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-y:scroll">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Футбольный менеджер Виртуальная Футбольная Лига: онлайн игра про футбол, управляй своим любимым футбольным клубом!" />
+<meta name="keywords" content="футбольный менеджер, онлайн игра футбол, бесплатные онлайн игры футбол, виртуальный футбол" />
+<meta name="viewport" content="width=800, user-scalable=yes">
+<title>Виртуальная Футбольная Лига: футбольный менеджер</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/vsolmain-2.8.7.min.css" />
+<link rel="stylesheet" type="text/css" href="/vsolmain-defbrowser-1.0.4.css" />
+<link rel="stylesheet" type="text/css" href="/ajax/jquery.ui-vfl.1.2.5.css" />
+<link rel="stylesheet" type="text/css" href="/ajax/jquery.theme.ui-vfl.1.2.1.css" />
+<link rel="stylesheet" type="text/css" href="/ajax/pnotify-3.0.2.min.css" />
+<script type="text/javascript" src="/ajax/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/ajax/jquery.ui-vfl.1.2.7.js"></script>
+<script type="text/javascript" src="/ajax/pnotify-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ajax/pnotify-2.1.1.buttons.min.js"></script>
+<script type="text/javascript" src="/ajax/jquery.cookie.js"></script>
+<script type="text/javascript" src="/ajax/init-1.2.3.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18510454-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-18510454-1');
+  gtag('config', 'AW-947457257');
+</script>
+<script type="text/javascript">$(function() {initPage()})</script></head>
+<body  onunload="">
+<script type="text/javascript">
+if(!!window.performance && window.performance.navigation.type === 2) window.location.reload()
+</script>
+<div style="position:absolute; z-index:-2; background-image:url(/menu/sky_high1.jpg); left:0; height:93px; width:100%" id="toppage"></div>
+<div style="position:absolute; z-index:-2; background-image:url(/pics/grandient.png); background-repeat:repeat-x; left:0; height:80%; top:92px; width:100%;"></div>
+<table style="border-width:0; height:100%; width:800px">
+<tr style="height:3px; min-height:3px">
+    <td style="width:5px; min-width:5px; height:3px; min-height:3px"></td>
+    <td  style="width:790px"></td>
+    <td style="width:5px; min-width:5px"></td>
+</tr>
+<tr style="height:5px; min-height:5px">
+    <td style="background-image:url(/menu/top_left.gif); height:5px; min-height:5px"></td>
+    <td style="background-image:url(/menu/horiz.gif)"></td>
+    <td style="background-image:url(/menu/top_right.gif)"></td>
+</tr>
+<tr style="height:1px; min-height:1px">
+    <td style="background-image:url(/menu/vert.gif); height:1px; min-height:1px" rowspan="3"></td>
+    <td class="bwh"></td>
+    <td style="background-image:url(/menu/vert.gif)" rowspan="3"></td>
+</tr>
+<tr>
+<td class="txt bwh vt tmain">
+<div id="centerscr" style="position:fixed; left:50%; top:50%; width:1px; height:1px"></div>
+<script type="text/javascript" src="/ajax/fp-1.4.4.min.js"></script>
+<script type="text/javascript" src="/ajax/menu-1.3.2.min.js"></script>
+<form method="post" id="login_form" name="login_form" action="/managerzone.php">
+<table class="wst">
+<tr>
+<td style="width:65%; height:60px">
+<div style="position:relative; left:-8px; top:-4px; width:100%">
+<img src="pics/logob.png" alt="" title="" style="position:absolute; left:6px; top:-31px; border:0" />
+<img id="img_logo" src="pics/logo6060.png" title="Футбольный менеджер" alt="Футбольный менеджер" style="position:absolute; left:6px; top:-31px; border:0; width:500px; height:65px" />
+</div>
+</td>
+<td style="width:35%; height:60px">
+<table style="margin-right:0">
+<tr>
+	<td class="lh21 mGr" style="padding-right:4px">логин</td>
+	<td class="lh21 txtl"><input tabindex="1" class="form5" name="login_n" type="text" maxlength="40" onkeypress="return loginE(event,1)" value="" style="width:95px; height:18px; line-height:18px; padding:0 2px" /></td>
+	<td class="lh21 mGr" style="padding-right:3px; padding-left:6px">пароль</td>
+	<td class="lh21 txtl"><input tabindex="2" class="form5" name="login_p" type="password" maxlength="40" value="" onkeypress="return loginE(event,1)" style="width:90px; height:18px; line-height:18px; padding:0 2px" /></td>
+	<td class="lh21 txtr"><img class="qt" title="Забыли пароль?"src="pics/forgot.gif" alt="" style="padding:3px 0 0 3px; width:11px; height:16px; border:0; cursor:pointer" onclick="fpass()" /></td>
+</tr>
+<tr>
+	<td class="txtr" colspan="5" height="19" valign="bottom"><a tabindex="3" class="butn-enter-vk qt" title="Вход в игру через Вконтакте" style="width:66px; height:14px; margin-right:3px" href="https://oauth.vk.com/authorize?client_id=4458665&redirect_uri=http://www.virtualsoccer.ru/managerzone.php&response_type=code&display=popup&v=5.60"><img src="pics/vk2.gif" border="0" style="margin:0 2px 0 0; width:12px; height:13px; vertical-align:middle" />контакте</a><a tabindex="4" class="butn-enter-fb qt" title="Вход в игру через Facebook" style="width:58px; height:14px; margin-right:3px" href="https://www.virtualsoccer.ru/facebook_login.php"><img src="pics/fb2.gif" border="0" style="margin:0; width:5px; height:13px; vertical-align:middle" />acebook</a><a tabindex="5" class="butn-enter-orange qt" title="Вход в игру через Одноклассники" style="width:18px; height:14px; margin-right:10px" href="http://www.odnoklassniki.ru/oauth/authorize?client_id=1095703040&redirect_uri=http://www.virtualsoccer.ru/managerzone.php&response_type=code"><img src="pics/od2.gif" border="0" style="margin:0; width:12px; height:13px; vertical-align:middle" /></a><a tabindex="6" class="butn-enter qt" title="Нажмите для входа в игру" style="width:100px; height:14px" href="javascript:void(0)" onclick="league_login(1); return false">вход в игру</a></td>
+	<td></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<table align="center" width="100%" style="border-top:1px dotted #006600; border-bottom:1px dotted #006600">
+<tr style="background-color:#e5f7e6">
+<td class="lh18" style="padding:6px 0; white-space:nowrap; width:100%; min-width:100%">
+<a tabindex="10" class="mnuh" href="index.php"><b>Главная</b></a> | <a tabindex="11" class="mnuh" href="news.php"><b>Новости</b></a> | <a tabindex="12" class="mnuh" href="online.php"><b>Онлайн</b></a> | <a tabindex="13" class="mnuh" href="rules.php"><b>Правила</b></a> | <a tabindex="14" class="mnuh" href="vox.php"><b>Опросы</b></a> | <a tabindex="15" class="mnu2" href="v3_user_register.php"><b>Регистрация в игре</b></a> | <a tabindex="16" class="mnuh" href="lost_password.php"><b>Забыли пароль?</b></a><br /><a tabindex="17" class="mnuh" href="shed.php"><b>Расписание</b></a> | <a tabindex="18" class="mnuh" href="league.php"><b>Турниры</b></a> | <a tabindex="19" class="mnuh" href="teams.php"><b>Команды</b></a> | <a tabindex="20" id="menu_plrz" class="mnuh" href="plrz_show.php"><b>Игроки</b></a><span id="menu_plrz_counter" class="up lh12" style="padding-left:1px; display:none"></span> | <a tabindex="21" id="menu_transfer" class="mnuh" href="transferlist.php"><b>Трансферы</b></a><span id="menu_transfer_counter" class="upr lh12" style="padding-left:1px; display:none"></span> | <a tabindex="22" class="mnuh" href="obmen_list.php"><b>Обмены</b></a> | <a tabindex="23" id="menu_arenda" class="mnuh" href="arendalist.php"><b>Аренда</b></a><span id="menu_arenda_counter" class="upr lh12" style="padding-left:1px; display:none"></span><br /><a tabindex="24" class="mnuh" href="statistics.php"><b>Рейтинги</b></a> | <a tabindex="25" class="mnuh" href="//forum.virtualsoccer.ru" target="_blank"><b>Форум</b></a> | <a tabindex="26" class="mnuh" href="javascript:void()" onclick="openChat(); return false;"><b>Чат</b></a> | <a tabindex="27" class="mnuh" href="about.php"><b>Контакты</b></a> 
+</td>
+</tr>
+</table>
+<fieldset style="color:#990000; background-color:#FFEEEE; border: 1px dotted #660000; padding: 5px; margin: 5px 1px; display:none" id="gE"></fieldset><table class="wst" style="margin-top:1px">
+<tr>
+<td class="lh16 txtj vt" style="padding-right:3px; width:78%">
+<h1>Добро пожаловать в мир виртуального футбола!</h1>
+<p><strong>Виртуальная Футбольная Лига</strong> - это онлайн игра, в которой вы становитесь тренером и менеджером футбольной команды. Ваши соперники - это тысячи "живых" людей со всего мира, которые тоже управляют своими футбольными клубами и играют против вас.
+</p>
+<table style="float:right; margin:6px 6px 0px 10px"><tr><td><a href="v3_user_register.php" class="butn-green" style="padding:6px 40px">Начать карьеру менеджера</a></td></tr></table>
+Внутри нашей игры - <strong>все турниры настоящего футбола</strong>: товарищеские матчи, национальные чемпионаты и кубки, Лига чемпионов и Лига Европы, Кубок Либертадорес, чемпионаты мира и континентов. Матчи проводятся раз в сутки. За год у нас проходят четыре игровых года.<br /><br /><strong>В роли тренера ваши задачи:</strong> определять тактику, стратегию и схему игры в каждом матче, выбирать футболистов в стартовый состав, проводить замены. Следить за усталостью и формой футболистов, сыгранностью состава, проводить тренировки. Изучать скрытые параметры своих и чужих футболистов, эффективно использовать эти знания. Выигрывать матчи, перехитрив других тренеров, и завоевывать трофеи для своей команды.<br /><br /><strong>В роли менеджера ваши задачи:</strong> построить инфраструктуру команды - стадион, базу, спортивную школу, тренировочные и медицинские центры. Заключать сделки на трансферном, арендном и обменном рынках. Выбирать спонсорские контракты. Организовывать товарищеские матчи и коммерческие турниры. Следить за экономикой и финансовым положением команды.<br /><br />Вы можете сделать карьеру успешного менеджера, меняя места своей работы или достигнув футбольных вершин со своим первым клубом. К вашим услугам <strong>возможность создать целую футбольную империю</strong>, состоящую из нескольких команд на разных континентах под вашим руководством. Каждый сезон вы можете претендовать на место у руля национальных, молодежных и юношеских&nbsp;&nbsp;сборных.<br /><br />Участие в игре <strong>бесплатное</strong>. Управлять командой можно <strong>прямо в браузере</strong>. Мы - один из старейших футбольных менеджеров на русском языке! В августе 2021 года игре <strong>исполнилось 20 лет</strong>!
+<h2>Как стать менеджером футбольной команды?</h2>
+<p>Для начала вам нужно <a href="v3_user_register.php" class="hdr2">зарегистрироваться в игре</a>, придумав себе логин и пароль.</p>
+<p>Вы сразу же получите в своё управление команду, которой будете играть или <a href="teams_free.php">обменяете её на другую</a>.</p>
+<p>Вопросы можно задавать <a href="/forum/" target="_blank" class="mnu1">на форуме</a>, <a href="/chat/" target="_blank" class="mnu1">в чате</a> или <a href="v3_dialog.php?p=8" class="mnu1">на странице технической поддержки</a>.</p>
+<h2>Последние игровые новости</h2>
+<div style="margin:10px 0px"><strong>СЕГОДНЯ ВЕЧЕРОМ</strong><br />В субботу <a class="bb" href="shed.php">в расписании</a> только <a class="bb" href="matchlist.php?day=19924&amp;season=60">матчи 1/4 финала</a> национальных кубков. Прогноз погоды сложный - жарко, 22°-30°. <br /><br />После матчей будут проведены орги на <a class="bb" href="transferlist.php">трансферном</a> и <a class="bb" href="arendalist.php">арендном</a> рынках, а команды, договорившиеся <a class="bb" href="obmen.php">обменяться игроками</a>, смогут это сделать.<br /><br />Топ-5 сильнейших четвертьфиналов:<br /><ul class="bb"><li class="bb"><a class="bb" href="v2ks.php?num=98981&amp;day=19924">Кубок Нидерландов</a>: Херенвен - Утрехт <a class="bb" href="previewmatch.php?day=19924&amp;match_id=364818">?:?</a><br /></li><li class="bb"><a class="bb" href="v2ks.php?num=99070&amp;day=19924">Кубок Португалии</a>: Ароука - Васко да Гама <a class="bb" href="previewmatch.php?day=19924&amp;match_id=364878">?:?</a><br /></li><li class="bb"><a class="bb" href="v2ks.php?num=98401&amp;day=19924">Кубок Англии</a>: Манчестер Юнайтед - Ливерпуль <a class="bb" href="previewmatch.php?day=19924&amp;match_id=364336">?:?</a><br /></li><li class="bb"><a class="bb" href="v2ks.php?num=98401&amp;day=19924">Кубок Англии</a>: Борнмут - Манчестер Сити <a class="bb" href="previewmatch.php?day=19924&amp;match_id=364338">?:?</a><br /></li><li class="bb"><a class="bb" href="v2ks.php?num=99212&amp;day=19924">Кубок Таиланда</a>: Чингмай Юнайтед - Районг <a class="bb" href="previewmatch.php?day=19924&amp;match_id=364999">?:?</a><br /></li></ul><br /><strong>ВЕСТИ С ПОЛЕЙ</strong><br />В пятничный вечер были сыграны <a class="bb" href="matchlist.php?day=19922&amp;season=60">матчи</a> 21-го тура <a class="bb" href="league.php">чемпионатов всех стран</a> и <a class="bb" href="matchlist.php?day=19923&amp;season=60">матчи</a> тура с таким же номером в <a class="bb" href="cupnew.php?season=60">конференции</a>.<br /><br />Сильнейшие матчи пятницы:<br /><ul class="bb"><li class="bb"><a class="bb" href="v2champ.php?num=98728&amp;day=19922">Италия</a>: Терамо - Лацио <a class="bb" href="viewmatch.php?day=19922&amp;match_id=128019">4:0</a><br /></li><li class="bb"><a class="bb" href="v2champ.php?num=98989&amp;day=19922">Новая Зеландия</a>: Вэйтекере Юнайтед - Окленд Сити <a class="bb" href="viewmatch.php?day=19922&amp;match_id=129466">2:0</a><br /></li><li class="bb"><a class="bb" href="v2champ.php?num=99107&amp;day=19922">Сан Томе и Принсипи</a>: Депортиво - Сантана <a class="bb" href="viewmatch.php?day=19922&amp;match_id=130126">1:1</a><br /></li></ul><br /><strong>СУББОТНЯЯ РАЗДАЧА VIP-КОМАНД</strong><br />Если кто-то всё-таки ждёт от нас традиционной субботней раздачи VIP-команд, то обратите внимание на <a class="bb" href="roster.php?num=5212">Фландрию (Аргентина)</a>. Более двух месяцев в свободных, неплохой состав, из D1, но на последнем месте и с долгами.<br /><br />С учётом обстановки, просим вам не писать никаких историй, как это происходило обычно, а просто оставить сообщение о том, что вы хотите возглавить эту команду. Если желающие будут, то передадим команду автору одного из сообщений до наступления новой недели. [<a href="news.php">подробнее</a>]</div>
+<h2>Футбольная аналитика</h2>
+<p>Журналисты Виртуальной Футбольной Лиги регулярно публикуют <a href="/news.php?t=12">обзоры состоявшихся туров</a>:</p><div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/25.gif" title="Федерация Бразилии" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Бразилия (D2), тур 21</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98509&amp;day=19922&amp;team_id=15694" target="_blank">Мертвые души</a> (<a href="/v3_profile.php?num=103219" class="mnu">A-Slane</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/5.gif" title="Федерация Алжира" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Алжир (D1), тур 21</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98374&amp;day=19922&amp;team_id=4307" target="_blank">Тур нескучный нулей и демонстративного автососа</a> (<a href="/v3_profile.php?num=187821" class="mnu">slimspit</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/157.gif" title="Федерация Фарер" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Фареры (D2), тур 21</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=99298&amp;day=19922&amp;team_id=3075" target="_blank">Чемпионат Фарер.D2.21 тур.</a> (<a href="/v3_profile.php?num=296317" class="mnu">krasnikov-75</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/88.gif" title="Федерация Ливии" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Ливия (D1), тур 21</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98868&amp;day=19922&amp;team_id=5464" target="_blank">Тишь да гладь...</a> (<a href="/v3_profile.php?num=331502" class="mnu">dorper</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/5.gif" title="Федерация Алжира" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Алжир (D1), тур 20</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98374&amp;day=19910&amp;team_id=4307" target="_blank">День Д или утро начинается не с кофе.</a> (<a href="/v3_profile.php?num=187821" class="mnu">slimspit</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/25.gif" title="Федерация Бразилии" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Бразилия (D2), тур 20</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98509&amp;day=19910&amp;team_id=15694" target="_blank">Сумасшедший второй дивиизон</a> (<a href="/v3_profile.php?num=103219" class="mnu">A-Slane</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/25.gif" title="Федерация Бразилии" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Бразилия (D1), тур 20</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=98508&amp;day=19910&amp;team_id=11269" target="_blank">Лидеры теряют очки и подпускают преследователей.</a> (<a href="/v3_profile.php?num=48801" class="mnu">Mihalych</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/160.gif" title="Федерация Франции" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Франция (D3-A), тур 20</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=99318&amp;day=19910&amp;team_id=5979" target="_blank">Ньор в лидирующей четвёрке. Синхронные победы команд без менеджеров. Р&#133;</a> (<a href="/v3_profile.php?num=337379" class="mnu">JurgenKlopp</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/157.gif" title="Федерация Фарер" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Фареры (D2), тур 20</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=99298&amp;day=19910&amp;team_id=3075" target="_blank">Чемпионат Фарер.D2.20 тур.</a> (<a href="/v3_profile.php?num=296317" class="mnu">krasnikov-75</a>)</span></div>
+<div class="txt3l" style="margin-bottom:3px; vertical-align:middle"><img class="qt" src="/cntr/157.gif" title="Федерация Фарер" style="vertical-align:bottom; width:20px; height:14px; border:0px" /> <b>Фареры (D2), тур 19</b>: <span style="white-space:nowrap"><a href="/v2obz.php?num=99298&amp;day=19897&amp;team_id=3075" target="_blank">Чемпионат Фарер.D2.19 тур.</a> (<a href="/v3_profile.php?num=296317" class="mnu">krasnikov-75</a>)</span></div>
+</td>
+<td class="vt" style="background-color:#e5f7e6"><table class="wst"><tr><td class="txt vt"><fieldset style="margin: 5px 0 1px 0; padding: 5px 2px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0px 4px"><b>Форум</b></legend><iframe src="/frm/recent.php" style="width:98%; height:246px; border:0" scrolling="no" frameBorder="0"></iframe></fieldset></td></tr><tr><td class="txt vt"><fieldset style="margin: 5px 0 1px 0; padding: 5px 2px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0px 4px"><b>Чат</b></legend><div><iframe src="chat_info_header.php" style="width:98%; height:20px; border:0" scrolling="no" frameBorder="0"></iframe></div><div><iframe src="chat_info_users.php" style="width:98%; height:246px; border:0" scrolling="no" frameBorder="0"></iframe></div></fieldset></td></tr><tr><td class="txt"><fieldset style="margin:11px 0 1px 0; padding:0; border: 1px solid #668866;"><!--noindex--><a href="https://t.me/vfliga" rel="nofollow" target="_blank"><img class="qt" src="pics/telegram.gif" title="Наш канал в телеграме" alt="Наш канал в телеграме" style="border:0; padding:6px 2px 2px 2px; width:150px; height:37px" /></a></fieldset></td></tr><tr><td class="txt"><fieldset style="margin:11px 0 1px 0; padding:8px 2px 5px 2px; border: 1px solid #668866;"><a href="https://vk.com/club4966917" rel="nofollow" target="_blank"><img class="qt" src="pics/ss_vkontakte.png" title="Наша группа вконтакте" alt="Наша группа вконтакте" style="border:0px; padding:0px 2px; width:35px; height:35px" /></a><a href="https://www.facebook.com/virtualsoccer" rel="nofollow" target="_blank"><img class="qt" src="pics/ss_facebook.png" title="Наша страница в Facebook" alt="Наша страница в Facebook" style="border:0px; padding:0px 2px; width:35px; height:35px" /></a><a href="https://www.twitter.com/virtual_soccer" rel="nofollow" target="_blank"><img class="qt" src="pics/ss_twitter.png" title="Наш twitter" alt="Наш twitter" style="border:0px; padding:0px 2px; width:35px; height:35px" /></a><a href="https://odnoklassniki.ru/virtualsoccer" rel="nofollow" target="_blank"><img class="qt" src="pics/ss_ok.png" title="Наша группа в Одноклассниках" alt="Наша группа в Одноклассниках" style="border:0px; padding:0px 2px; width:35px; height:35px" /></a><!--/noindex--></fieldset></td></tr><tr><td class="txt vt"><fieldset style="margin:5px 0 1px 0; padding:5px 2px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0px 4px">Сезон: <b>60</b>, День: <b>256</b></legend><div style="padding:1px 0px"><table class="nil wst"><tr><td class="lh13 txt5" colspan="2"><u>Менеджеры</u>:</td></tr><tr><td class="lh13 txt5r" style="width:62%">Всего менеджеров:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>5 662</b></td></tr><tr><td class="lh13 txt5r">Без команд:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>382</b></td></tr><tr><td class="lh13 txt5r">С командами:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>5 280</b></td></tr><tr><td class="lh13 txt5r qt" title="Команд у менеджеров с командами (в среднем)">Команд у менедж.:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>2.29</b></td></tr><tr>
+<td class="lh13 txt5r">Регистрации:</td>
+<td class="lh13 txt5l" style="white-space:nowrap"><span class="qt" title="За вчера"><b>24</b></span> <span class="qt" title="За сегодня">(<b>9</b>)</span></td>
+</tr>
+<tr><td class="lh13 txt5" colspan="2" style="padding-top:4px"><u>Команды</u>:</td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Всего команд:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>14 270</b></td></tr><tr><td class="lh13 txt5r">Свободных:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>2 175</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Денег в среднем:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>24 480</b>к</td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Долг в среднем:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>205</b>к</td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Вместимость стад.:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>53 507</b></td></tr><tr><td class="lh13 txt5" colspan="2" style="padding-top:4px"><u>Средние показатели по базам</u>:</td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Уровень базы:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>6,45</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Трен.центры:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>5,91</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Спортшколы:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>5,87</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Медцентры:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>6,62</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Физ.центры:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>6,67</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Скаутцентры:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>3,00</b></td></tr><tr><td class="lh13 txt5" colspan="2" style="padding-top:4px"><u>Игроки</u>:</td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Всего игроков:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>300 644</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Игроков в команде:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>21,07</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Средн. возраст:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>24,07</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Средн. сила:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>91,87</b></td></tr><tr><td class="lh13 txt5r" style="white-space:nowrap">Совмещения у:</td><td class="lh13 txt5l" style="white-space:nowrap"><b>64,13</b>%</td></tr></table></div></fieldset></td></tr><tr><td class="txt"><fieldset style="margin:5px 0 1px 0; padding: 5px 2px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0 4px"><b>TOP-10 менеджеров</b></legend><div style="padding:1px 0"><table class="wst">
+<tr>
+<td class="lh16 txt2r" style="width:12px"><b>1.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=52478" class="mnu">Финч</a></td>
+<td class="lh16 txt2 qt" style="width:20px" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r" style="width:32px"><b>751.43</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>2.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=130471" class="mnu">ystyugov</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>748.40</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>3.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=327919" class="mnu">All_In</a></td>
+<td class="lh16 txt2 qt" title="Украина"><div class="cntr" style="background-position: -315px -60px"></div></td>
+<td class="lh16 txt2r"><b>695.62</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>4.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=98724" class="mnu">GVF</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>680.47</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>5.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=152119" class="mnu">veb23</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>675.99</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>6.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=343264" class="mnu">ledidi</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>669.21</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>7.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=350862" class="mnu">VladIvanov</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>664.99</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>8.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=344782" class="mnu">аквитанец</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>662.10</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>9.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=344121" class="mnu">PAN</a></td>
+<td class="lh16 txt2 qt" title="Украина"><div class="cntr" style="background-position: -315px -60px"></div></td>
+<td class="lh16 txt2r"><b>661.28</b></td>
+</tr>
+<tr>
+<td class="lh16 txt2r"><b>10.</b></td>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=259393" class="mnu">Rom@rio</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>660.38</b></td>
+</tr>
+</table></div><div class="txt2" style="padding:3px 0px">[<a href="statistics.php?act=99">подробнее</a>]</div></fieldset></td></tr><tr><td class="txt"><fieldset style="margin:5px 0 1px 0; padding: 5px 2px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0 4px"><b>Дни рождения</b></legend><div style="padding:1px 0"><table class="wst">
+<tr>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=78226" class="mnu">YNWA</a></td>
+<td class="lh16 txt2 qt" style="width:20px" title="Украина"><div class="cntr" style="background-position: -315px -60px"></div></td>
+<td class="lh16 txt2r" style="width:36px"><b>36</b>  лет</td>
+</tr>
+<tr>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=289203" class="mnu">Nunafig</a></td>
+<td class="lh16 txt2 qt" title="Украина"><div class="cntr" style="background-position: -315px -60px"></div></td>
+<td class="lh16 txt2r"><b>43</b>  года</td>
+</tr>
+<tr>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=9669" class="mnu">Nikanor</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"><b>45</b>  лет</td>
+</tr>
+<tr>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=242229" class="mnu">Engeneer33</a></td>
+<td class="lh16 txt2 qt" title="Россия"><div class="cntr" style="background-position: -252px -60px"></div></td>
+<td class="lh16 txt2r"></td>
+</tr>
+<tr>
+<td class="lh16 txt2l" style="padding-left:2px"><a href="v3_profile.php?num=356193" class="mnu">ScatXX</a></td>
+<td class="lh16 txt2 qt" title="Беларусь"><div class="cntr" style="background-position: -21px -90px"></div></td>
+<td class="lh16 txt2r"></td>
+</tr>
+</table></div></fieldset></td></tr><tr><td class="txt"><fieldset style="margin:5px 0 1px 0; padding:5px; border: 1px solid #668866;"><legend style="color:#006600; margin-left:5px; text-align:left; padding:0px 4px"><b>Наш рейтинг</b></legend><div style="padding:1px 0px"><!--noindex-->
+<div style="margin:2px 0"><a href="https://webmaster.yandex.ru/siteinfo/?site=www.virtualsoccer.ru"><img width="88" height="31" alt="" border="0" src="https://yandex.ru/cycounter?www.virtualsoccer.ru&theme=light&lang=ru"/></a></div>
+<!--/noindex-->
+</div></fieldset></td></tr></table>
+</td>
+</tr>
+</table>
+<div id="notice_reg" style="display:none">Начните карьеру футбольного менеджера, нажав на кнопку:<div style="margin:10px 15px; text-align:center"><span style="float:right"><a class="butn-green butn-notify" href="v3_user_register.php"><b>Зарегистрироваться в игре</b></a></span></div></div>
+<script type="text/javascript">
+var stack_bottomright = {"dir1": "up", "dir2": "left", "firstpos1": 10, "firstpos2": 10};
+function hide_hint(h,d,t) {
+  $.ajax({
+    dataType: "json", type: "POST", timeout: 60000,
+    url:"/ajax/hide_hint.php",
+    data: {"hint":h, "details":d, "team":t},
+    success: function(result) {}
+  });
+}
+$(function(){
+  new PNotify({
+    title: "Виртуальная Футбольная Лига",
+    text: $("#notice_reg").html(),
+    type: "notice",
+    hide: false, 
+    addclass: "lh16 pgreen stack-bottomright",
+    stack: stack_bottomright
+  }).get().on("click", function(e){if ($(e.target).is(".ui-icon-close")) {hide_hint(203,0,0)}});
+});
+</script>
+<div id="chat_btn" class="floatbtn" onclick="openChat()" style="display:none">ЧАТ</div><form name="chat_open" action="/chat/" target="_blank" method="POST"></form>
+<div id="chat_txt" class="ui-pnotify flcht" style="position:fixed; width:370px; height:370px; top:auto; left:5px; bottom:5px; right:auto; z-index:9999"><div class="nodrag" style="float:left; cursor:pointer; padding:9px 0 6px 6px"><button class="btn-info-orange nodrag" onclick="document.chat_open.submit(); return false"></button>
+</div><div id="chat_header" style="float:left; cursor:default; padding:10px 0 0 6px; text-align:left; font-weight:bold; color:#EF8C08">В чате <span id="chat_o">41</span> <span id="chat_m">менеджер</span></div><div class="nodrag" style="float:right; padding:10px 5px 5px 0; cursor:pointer" onclick="closeChat()"><span class="ui-icon ui-icon-close nodrag" style="background-image: url(/ajax/images/ui-icons_ef8c08_256x240.png) !important;" onclick="closeChat()"></span></div>
+<table class="nodrag wst nil" style="margin:10px 0 5px 0"><tr><td class="txtl" style="padding-left:5px"><form method="post" id="chat_form" name="chat_form" action="/managerzone.php">
+<table class="nol wst">
+<tr>
+<td class="lh21 txtr"><input placeholder="логин" class="form5 nodrag" name="login_n" type="text" maxlength="40" onkeypress="return loginE(event,3)" value="" style="width:100%; height:20px; font-size:11px; border: 1px solid #999999; padding:1px 3px" /></td>
+<td class="lh21 txtr" style="padding-left:3px"><input placeholder="пароль" class="form5 nodrag" name="login_p" type="password" maxlength="40" value="" onkeypress="return loginE(event,3)" style="width:100%; height:20px; font-size:11px; border: 1px solid #999999; padding:1px 3px" /></td>
+<td id="chat_enter_td" class="lh21 txtr" style="padding-left:3px" width="18"><a id="chat_enter_btn" class="butn-enter qt" title="Нажмите для входа в игру" style="width:18px; height:17px; padding:0; margin:0; line-height:16px" href="javascript:void(0)" onclick="league_login(3); return false">&rarr;</a></td>
+<td class="lh21 txtr" style="padding-left:3px" width="20"><a class="butn-enter-vk qt" title="Вход в игру через Вконтакте" style="width:18px; height:17px; padding:0; margin:0; line-height:16px" href="https://oauth.vk.com/authorize?client_id=4458665&redirect_uri=http://www.virtualsoccer.ru/social_register.php&response_type=code&display=popup&v=5.60"><img src="pics/vk2.gif" border="0" style="margin:0; width:12px; height:13px; vertical-align:middle" /></a></td>
+<td class="lh21 txtr" style="padding-left:3px" width="20"><a class="butn-enter-fb qt" title="Вход в игру через Facebook" style="width:18px; height:17px; padding:0; margin:0; line-height:16px" href="https://www.virtualsoccer.ru/facebook_login.php"><img src="pics/fb2.gif" border="0" style="margin:0; width:5px; height:13px; vertical-align:middle" /></a></td>
+<td class="lh21 txtr" style="padding-left:3px; padding-right:5px" width="20"><a class="butn-enter-orange qt" title="Вход в игру через Одноклассники" style="width:18px; height:17px; padding:0; margin:0; line-height:16px" href="http://www.odnoklassniki.ru/oauth/authorize?client_id=1095703040&response_type=code&redirect_uri=http://www.virtualsoccer.ru/social_register.php"><img src="pics/od2.gif" border="0" style="margin:0; width:12px; height:13px; vertical-align:middle" /></a></td>
+</tr>
+</table>
+</form>
+</table><div class="txt3l nodrag chatM" id="chat_mess" style="height:304px; max-height:304px; width:358px; max-width:358px"><div style="padding:2px 2px 0 2px; color:#009900"><span class="chatP" user="48549" mid="5467185">&#8226;</span><span class="chatN">Freeks</span> <span id="m5467185">Ramsay: ну, видимо(((</span></div><div style="padding:2px 2px 0 2px; color:#FF7F50"><span class="chatP" user="129968" mid="5467182">&#8226;</span><span class="chatN">Ramsay</span> <span id="m5467182">Freeks: Сантос с игрой завязал?</span></div><div style="padding:2px 2px 0 2px; color:#009900"><span class="chatP" user="48549" mid="5467179">&#8226;</span><span class="chatN">Freeks</span> <span id="m5467179">barca10fan: ты не воспользовался шансом...</span></div><div style="padding:2px 2px 0 2px; color:#007BA7"><span class="chatP" user="1719" mid="5467176">&#8226;</span><span class="chatN">Безымянный</span> <span id="m5467176">barca10fan: ну видимо хотел высказать что о тебе думает ))</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="284979" mid="5467175">&#8226;</span><span class="chatN">barca10fan</span> <span id="m5467175">Безымянный: блин мне ридя седня в 8 утра звонил я чет сбросил а теперь он не отвечает аж инетересно чет стало че хотел то))</span></div><div style="padding:2px 2px 0 2px; color:#FF7F50"><span class="chatP" user="129968" mid="5467174">&#8226;</span><span class="chatN">Ramsay</span> <span id="m5467174">Безымянный: ну да, а то заработает на полгода, он у нас эмоциональная личность</span></div><div style="padding:2px 2px 0 2px; color:#007BA7"><span class="chatP" user="1719" mid="5467173">&#8226;</span><span class="chatN">Безымянный</span> <span id="m5467173">Ramsay: всё таки на неделю??? И это в такой момент, когда такие события творятся  <img src="/pics/smiles/smile24.gif" style="vertical-align:middle" /></span></div><div style="padding:2px 2px 0 2px; color:#FF7F50"><span class="chatP" user="129968" mid="5467169">&#8226;</span><span class="chatN">Ramsay</span> <span id="m5467169">Португалец: в бане, неделю чалится</span></div><div style="padding:2px 2px 0 2px; color:#991199"><span class="chatP" user="359680" mid="5467167">&#8226;</span><span class="chatN">Португалец</span> <span id="m5467167">Ramsay: где серега? уехал в швейцарию?</span></div><div style="padding:2px 2px 0 2px; color:#009900"><span class="chatP" user="48549" mid="5467166">&#8226;</span><span class="chatN">Freeks</span> <span id="m5467166">Причина непонятна, но чё то произошло с ним</span></div><div style="padding:2px 2px 0 2px; color:#008080"><span class="chatP" user="30020" mid="5467159">&#8226;</span><span class="chatN">Hottab</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="331452" mid="5467156">&#8226;</span><span class="chatN">Dolus</span> <span id="m5467156">vetromet: Дык, КТ близятся.</span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="161195" mid="5467151">&#8226;</span><span class="chatN">vetromet</span> <span id="m5467151">Всем привет! А что, какие-то подвижки в пользу "кумиров"?</span></div><div style="padding:2px 2px 0 2px; color:#FC0FC0"><span class="chatP" user="201711" mid="5467150">&#8226;</span><span class="chatN">Чемпионка</span> <span id="m5467150">Dolus: так то - все, но в Земуне они не входят  в основу, что просто поразительно, учитывая, что их 4! <img src="/pics/smiles/smile02.gif" style="vertical-align:middle" /> <img src="/pics/smiles/smile32.gif" style="vertical-align:middle" /></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="331452" mid="5467149">&#8226;</span><span class="chatN">Dolus</span> <span id="m5467149">Чемпионка: У тебя уже все клубы кумирами укомплектованы?</span></div><div style="padding:2px 2px 0 2px; color:#FC0FC0"><span class="chatP" user="201711" mid="5467142">&#8226;</span><span class="chatN">Чемпионка</span> <span id="m5467142">Здесь всё тоже самое, "филиал безобразий"? <img src="/pics/smiles/smile02.gif" style="vertical-align:middle" /></span></div><div style="padding:2px 2px 0 2px; color:#FC0FC0"><span class="chatP" user="201711" mid="5467140">&#8226;</span><span class="chatN">Чемпионка</span> <span id="m5467140">Здравствуйте!</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467137">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467137">Barabulik: да чушь всякая</span></div><div style="padding:2px 2px 0 2px; color:#CD853F"><span class="chatP" user="353916" mid="5467136">&#8226;</span><span class="chatN">Barabulik</span> <span id="m5467136">Доброе, как обстановка в интернациональном чате?</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467103">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467103">kosmos199: опять "а нас за що", пушистик )</span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467102">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#FF7F50"><span class="chatP" user="129968" mid="5467101">&#8226;</span><span class="chatN">Ramsay</span> <span id="m5467101">Divine: вот нравятся мне украинцы, всё про всё знают</span></div><div style="padding:2px 2px 0 2px; color:#00A86B"><span class="chatP" user="101056" mid="5467100">&#8226;</span><span class="chatN">Divine</span> <span id="m5467100">kosmos199: зато ты обо всём подозреваешь и всё знаешь наверняка, о, просветитель</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467099">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467099">kosmos199: "тоже", ну да, конечно. Ты понимаешь, что такой аргумент максимально тупой? Точно так же можно сказать "многие украинцы не подозревали о преступлениях", но я этого же не говорю</span></div><div style="padding:2px 2px 0 2px; color:#00A86B"><span class="chatP" user="101056" mid="5467098">&#8226;</span><span class="chatN">Divine</span> <span id="m5467098">он ещё тут  <img src="/pics/smiles/smile30.gif" style="vertical-align:middle" /> <img src="/pics/smiles/smile47.gif" style="vertical-align:middle" /></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467097">&#8226;</span><span class="chatN">kosmos199</span> <span id="m5467097">Мирные немцы также не подозревали о преступлениях своего Гитлера как и Вы о концлагере Изоляция что на Донбассе</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467096">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467096">kosmos199: СК РФ тоже много дел завела.</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467095">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467095">kosmos199: тебе повыкладывать таких видео с националистами украинскими?</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467094">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467094">kosmos199: да-да, давай ссылку )</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467093">&#8226;</span><span class="chatN">ElZabivallid</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467092">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467091">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467090">&#8226;</span><span class="chatN">kosmos199</span> <span id="m5467090">Вот например откровения русского героя который начал войну на Донбассе</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467089">&#8226;</span><span class="chatN">ElZabivallid</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467088">&#8226;</span><span class="chatN">kosmos199</span> <span id="m5467088">ElZabivallid: я могу каждое свое слово потвердить</span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467087">&#8226;</span><span class="chatN">kosmos199</span> <span id="m5467087">ElZabivallid: Что не касалось уточни ?</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467086">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467086">kosmos199: где ты вообще нашел, что я оправдываю нападение?</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467085">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467085">ElZabivallid: +</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467084">&#8226;</span><span class="chatN">ElZabivallid</span> <span id="m5467084">kosmos199: понимаешь, для нормальных людей твои речи - это юлеж. Когда тебя не касалось и страшные вещи делали где-то далеко - ты нормально спал. А теперь война пришла на порог и ты сразу, "а нас за що"? Смешно</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467083">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467083">kosmos199: короче... Кажется ваше мнение скоро будет не в тренде...</span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467082">&#8226;</span><span class="chatN">kosmos199</span> <span id="m5467082">romanisti: ну да индейцам не понять</span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467081">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467080">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467080">kosmos199: "цивилизованный мир" это меня всегда веселило</span></div><div style="padding:2px 2px 0 2px; color:#FF8C69"><span class="chatP" user="104234" mid="5467079">&#8226;</span><span class="chatN">ElZabivallid</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467078">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#FF7F50"><span class="chatP" user="129968" mid="5467077">&#8226;</span><span class="chatN">Ramsay</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#006600"><span class="chatP" user="194571" mid="5467076">&#8226;</span><span class="chatN">kosmos199</span> <span style="color:#999999"><i>(сообщение скрыто модератором)</i></span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467075">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467075">kosmos199: Теперь наведут порядок</span></div><div style="padding:2px 2px 0 2px; color:#991199"><span class="chatP" user="359680" mid="5467074">&#8226;</span><span class="chatN">Португалец</span> <span id="m5467074">ElZabivallid: какой смысл в том, что один чатовец пытается, что-то доказать другому?</span></div><div style="padding:2px 2px 0 2px; color:#708090"><span class="chatP" user="92666" mid="5467073">&#8226;</span><span class="chatN">romanisti</span> <span id="m5467073">kosmos199: лично может и не убивал. А вот Его ребята деревни сжигали.</span></div></div></div>
+<div class="chatDM">
+<div class="chatDMe" onclick="openP()">Профиль</div>
+<div class="chatDMe" onclick="hideM()">Закрыть</div>
+</div>
+<script type="text/javascript">
+var mobile_device = 0
+var my_userid = 0
+var my_nick = ""
+var my_chat_last_ev = 5467193
+var my_chat_online = 41
+var my_chat_hidden = 0
+var my_chat_closed = 0
+var my_chat_def = 1
+var my_chat_align = 3
+var my_chat_left = 5
+var my_chat_right = 999999
+var my_chat_top = 999999
+var my_chat_bottom = 5
+var my_chat_height = 370
+var my_chat_width = 370
+var my_chat_color_code = ""
+var my_chat_color = ""
+var my_chat_bantime = 0
+var my_chat_currtime = 1645959893
+var my_chat_banstatus = 0
+var my_chat_ignored = []
+</script>
+<script type="text/javascript" src="/ajax/ifvisible.min.js"></script>
+<script type="text/javascript" src="/ajax/chat-1.6.5.min.js"></script>
+</td></tr>
+<tr style="height:50px">
+<td class="bwh">
+<footer><hr style="color:#999999; background-color:#999999; height:1px; border-style:none; margin-top:3px; margin-bottom:3px; width:95%" />
+<div class="lh14 und" style="padding-top:0"><b><a class="bb und" href="about.php" target="_blank">© 2001-2022 virtualsoccer.ru</a></b></div>
+<table>
+<tr>
+<td class="lh14 und"><a href="v3_dialog.php?p=8" class="und" target="_blank"><b>Обратиться в тех.поддержку</b></a> - Почта: <a href="mailto:info@virtualsoccer.ru" class="und" target="_blank"><b>info@virtualsoccer.ru</b></a> - ICQ: <a class="und" href="https://icq.im/vfliga" target="_blank"><b>@vfliga</b></a> - Skype: <a href="skype:al_karpuk?chat" class="und" target="_blank"><b>al_karpuk</b></a>, <a href="skype:avers_b?chat" class="und" target="_blank"><b>avers_b</b></a> - Telegram: <a href="https://telegram.me/VirtualSoccer" class="und" target="_blank"><b>@VirtualSoccer</b></a></td>
+</tr>
+</table>
+<div id="unddiv" class="lh14 und" style="padding-bottom:10px">Страница сгенерирована за 0.0167 сек., 0 запр. unknown unknown. unknown.</div>
+</footer><div style="position: absolute; height:1px"><!--noindex-->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(219873, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/219873" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Rating Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "256872", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "topmailru-code");
+</script><noscript><div>
+<img src="https://top-fwz1.mail.ru/counter?id=256872;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</div></noscript>
+<!-- //Rating Mail.ru counter -->
+<!-- Top100 (Kraken) Counter -->
+<script>
+    (function (w, d, c) {
+        (w[c] = w[c] || []).push(function() {
+            var options = {
+                project: 801281,
+        };
+        try {
+            w.top100Counter = new top100(options);
+        } catch(e) { }
+    });
+        var n = d.getElementsByTagName("script")[0],
+    s = d.createElement("script"),
+    f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src =
+        (d.location.protocol == "https:" ? "https:" : "http:") +
+        "//st.top100.ru/top100/top100.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(window, document, "_top100q");
+</script>
+<noscript>
+  <img src="//counter.rambler.ru/top100.cnt?pid=801281" alt="Топ-100" />
+</noscript>
+<!-- END Top100 (Kraken) Counter -->
+<!--LiveInternet counter-->
+<script type="text/javascript">
+new Image().src = "//counter.yadro.ru/hit?r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";h"+escape(document.title.substring(0,150))+
+        ";"+Math.random();
+</script><!--/LiveInternet-->
+<!--/noindex-->
+</div>
+</td>
+</tr>
+<tr style="height:5px">
+    <td style="background-image: url(/menu/bottom_left.gif)"></td>
+    <td style="background-image: url(/menu/horiz.gif)"></td>
+    <td style="background-image: url(/menu/bottom_right.gif)"></td>
+</tr>
+<tr style="height:10px">
+    <td colspan="3"></td>
+</tr>
+</table>
+<div style="position:relative; z-index:-2; top:0; height:0">
+<div style="position:absolute; z-index:-2; bottom:0; left:0; width:100%"><img src="menu/stad_new.gif" style="width:100%; margin-bottom:-4px;" alt="" /></div>
+</div>
+</body></html>

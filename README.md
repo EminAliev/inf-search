@@ -20,3 +20,16 @@ cd task_1
 ```bash
 python3 main.py
 ```
+
+#### Task 2
+
+##### Change the directory to the run script
+```bash
+cd task_2
+```
+
+##### Run script
+
+```bash
+python3 main.py
+```

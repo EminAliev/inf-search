@@ -1,0 +1,1284 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script type="text/javascript" src="/media/js/jquery-1.7.2.min.js"></script>
+  
+  <script type="text/javascript" src="/media/js/jquery.cookie.js"></script>
+    <!--   <link href="/media/css/karatestrap.css" media="screen" rel="stylesheet" type="text/css"> -->
+    <link href="/media/css/jcarousel.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/media/css/wysihtml5.css" media="screen" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/media/extensions/bootstrap/css/bootstrap.min.css">
+    <script src="/media/extensions/bootstrap/js/bootstrap.js"></script>
+    <!-- Site -->
+    <link rel="stylesheet" href="/media/css/main-v7.css">
+    <link rel="stylesheet" href="/media/css/font.css">
+    <link rel="stylesheet" href="/media/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/collisions.css">
+
+    <link rel="stylesheet" type="text/css" href="/media/css/main.update-v1.css" />
+    <link class="mobileCSS" rel="stylesheet" media="screen and (max-width: 1020px)" href="/media/css/mobile-1020-v1_1.css" />
+    <link class="mobileCSS" rel="stylessheet" media="screen and (max-width: 600px)" href="/media/css/mobile-600-v1_1.css" />
+    <link id="forcedMobileCSS" rel="stylesheet" type="text/css" href="" />
+    <link id="forcedMobileCSS1" rel="stylesheet" type="text/css" href="" />
+    <link id="forcedMobileCSS2" rel="stylesheet" type="text/css" href="" />
+
+    <script src="/media/extensions/PrettySimpleContentSlider/jquery.easing.1.3.js"></script>
+    <link type="text/css" rel="stylesheet" href="/media/css/jquery.maximage.css" media="screen" />
+    <script type="text/javascript" src="/media/js/jquery.maximage.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.cycle.all.min.js"></script>
+    <script type="text/javascript" src="/media/js/main.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.jcarousel.min.js"></script>
+    <!-- <script type="text/javascript" src="/media/js/karatestrap.js"></script> -->
+    <title> 
+Karate.ru - информационно-аналитический портал о каратэ и единоборствах
+</title>
+    <script type="text/javascript" src="/media/js/jquery.form.js"></script>
+    <script type="text/javascript" src="/media/js/jquery.history.min.js"></script>
+    <script src='/media/js/urlify.js'></script>
+     <!-- Yandex.Metrika counter -->
+      <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(18617218, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+        });
+      </script>
+      <noscript><div><img src="https://mc.yandex.ru/watch/18617218" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20135229-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      if (navigator.appName.indexOf('Microsoft')==-1 ||
+        (navigator.plugins && navigator.plugins.length) )
+      {
+        if ( navigator.plugins["Shockwave Flash"]){
+
+        }
+        else{
+          flash = document.getElementsByClassName('banner_rotator_swfbanner');
+          for (var i = 0; i < flash.length; i++) {
+            flash[i].style.display = 'none';
+          };
+          images = document.getElementsByClassName('banner_rotator_stub_image');
+          for (var i = 0; i < images.length; i++) {
+            images[i].style.display = 'block';
+          };
+        }
+      }
+      else {
+        flash = document.getElementsByClassName('banner_rotator_swfbanner');
+        for (var i = 0; i < flash.length; i++) {
+          flash[i].style.display = 'none';
+        };
+        images = document.getElementsByClassName('banner_rotator_stub_image');
+        for (var i = 0; i < images.length; i++) {
+          images[i].style.display = 'block';
+        };
+      }
+
+      $('#showSearchFormBtn').on('click', function(e) {
+        e.preventDefault();
+        $('#search-form').show();
+        $('#search-form input[type=text]').focus();
+      });
+
+      $('#search-form input[type=text]').on('blur', function(e) {
+        setTimeout(function() {
+          e.preventDefault();
+          $('#search-form').hide();
+        }, 100);
+      });
+
+      $('#search-form button').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('#search-form').submit();
+      });
+
+      $('#mobileNaToggle').on('click', function(e){
+          e.preventDefault();
+          $(this).toggleClass('active');
+          $('#headerNav').toggleClass('open');
+      });
+
+    });
+    </script>
+
+    
+  <meta name="Description" content="Все об MMA [UFC, Bellator], боксе, каратэ и единоборствах. Последние новости, статьи, интервью, каталог организаций, фото, видео и блоги.">
+  <meta name="Keywords" content="MMA, UFC, Bellator, бокс, каратэ, ашихара, вадокай, годзю-рю, дзенсимон, каратеномичи, косики, кудо, ситорю, сетокан, новости, видео, результаты, дзюдо, самбо, борьба,">
+  <meta name="google-site-verification" content="Yk44Y1DRpGQk0TkjwD-ZDUouuM8sjVDTTea4V6nGrw0" />
+  <meta name="kadam-verification" content="kadam604e511b2ef6306069b4e37fb284e29c" />
+  <meta name="pmail-verification" content="ab87ead29cbe05d3feea227c8296c5d6">
+
+  </head>
+
+
+
+<body>
+    
+<script>
+    (function(w,d,o,g,r,a,m){
+        var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
+        w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+        function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
+            var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;
+            a.src='//cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
+            p.parentNode.insertBefore(a,p)}}e(g,w,r);
+        w[r](cid,{id:1564397055,domain:w[r+'h']});
+    })(window,document,'script',['trafficdok.com'],'ABNS');
+</script>
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPTFRK" 
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PPTFRK');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = _tmr || [];
+_tmr.push({id: "2439350", type: "pageView", start: (new Date()).getTime()});
+(function (d, w) {
+var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true;
+ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window);
+</script><noscript><div style="position:absolute;left:-10000px;">
+<img src="//top-fwz1.mail.ru/counter?id=2439350;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="wrap">
+  <div class="header">
+    <div class="header__container">
+        <div class="header__context">
+            
+                
+                  
+
+                
+            
+        </div>
+        <div class="header__options">
+            <div class="header__logo">
+                <a href="/">
+                    <img src="/media/images/logo-flat.png" alt="Karate.ru" style="float: left;">
+                </a>
+            </div>
+            <div class="header__shop">
+                <a href="/shop/">
+                    Магазин
+                </a>
+            </div>
+            <div class="header__actions">
+                
+                  <div class="header__auth">
+                      <a class="header__auth-link" href="/authentication/" onClick="popup_load('Вход', '/login_popup/'); return false;" rel="nofollow">
+                          <span class="header__auth-avatar">
+                              <img src="/media/images/auth_avatar.png" alt="Guest">
+                          </span>
+                          <span class="header__auth-text">Вход</span>
+                      </a>
+                  </div>
+                
+                <div class="header__search">
+                    <button id="showSearchFormBtn" class="header__search-toggle" type="button">
+                        <img src="/media/images/seacrh.png" alt="">
+                    </button>
+                    <form id="search-form" action="/search/">
+                        <div class="input-group">
+                            <input type="text" class="form-control header__search-control" name="q">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="icon-search"></i></button>
+                            </span>
+                        </div>
+                  </form>
+                </div>
+                <div class="header__mobile-toggle">
+                    <a id="mobileNaToggle" class="header__nav-toggle" href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <nav id="headerNav" class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item ">
+                        <a class="header__nav-link" href="/news/">Каратэ</a>
+                    </li>
+                    <li class="header__nav-item ">
+                        <a class="header__nav-link" href="/news/martialarts/">MMA и Бокс</a>
+                    </li>
+                    <li class="header__nav-item ">
+                        <a class="header__nav-link" href="/articles/">Статьи</a>
+                    </li>
+                    <li class="header__nav-item ">
+                        <a class="header__nav-link" href="/organizations/search/2/1/">Организации</a>
+                    </li>
+                    <li class="header__nav-item dropdown header__nav-item--tablet header__nav-item--desktop">
+                        <a class="dropdown-toggle header__nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">
+                            Еще
+                            <i class="icon-angle-down"></i>
+                        </a>
+                        <div class="header__nav-dropdown-menu dropdown-menu">
+                            <div class="header__nav-dropdown-menu-container">
+                                <ul class="header__nav-dropdown-menu-list">
+                                    <li class="header__nav-dropdown-item">
+                                            <a class="header__nav-dropdown-link" href="/events/">События</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/ashihara/">Ашихара</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/wado/">Вадокай</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/gojuryu/">Годзю-рю</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/joshinmon/">Дзесинмон</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/karatenomichi/">Каратеномичи</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/kosiki/">Косики</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/kyokushin/">Киокусин</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/jujutsu/">Джиу-джитсу</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/kudo/">Кудо</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/sitoryu/">Ситорю</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/shotokan/">Сетокан</a>
+                                    </li>
+                                </ul>
+                                <ul class="header__nav-dropdown-menu-list">
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/judo/">Дзюдо</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/wrestling/">Борьба</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/taekwondo/">Тхэквондо</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/sambo/">Самбо</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/wushu/">Ушу</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/mixfight/">Смешанные<br /> единоборства</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/muaythai/">Муай тай</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/kickboxing/">Кикбоксинг</a>
+                                    </li>
+                                    <li class="header__nav-dropdown-item">
+                                        <a class="header__nav-dropdown-link" href="/aikido/">Айкидо</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header__nav-item header__nav-item--alloted">
+                        <a class="header__nav-link" href="/shop/">Магазин</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__submenus dropdown">
+            
+              <div class="header__submenus-auth">
+                  <a href="/authentication/" onClick="popup_load('Вход', '/login_popup/'); return false;" rel="nofollow">
+                      <span class="header__auth-avatar">
+                          <img src="/media/images/icon_login.png" alt="Login">
+                      </span>
+                  </a>
+              </div>
+            
+            <a href="#" class="header__submenus-toggle dropdown-toggle" data-toggle="dropdown">
+                Все о каратэ и единоборствах<span class="caret"></span>
+            </a>
+            <nav class="header__submenu dropdown-menu">
+                <ul class="header__submenu-list">
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/events/">События</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/ashihara/">Ашихара</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/wado/">Вадокай</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/gojuryu/">Годзю-рю</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/joshinmon/">Дзесинмон</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/karatenomichi/">Каратеномичи</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/kosiki/">Косики</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/kyokushin/">Киокусин</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/jujutsu/">Джиу-джитсу</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/kudo/">Кудо</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/sitoryu/">Ситорю</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/shotokan/">Сетокан</a>
+                    </li>
+                </ul>
+                <ul class="header__submenu-list">
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/judo/">Дзюдо</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/boxing/">Бокс</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/wrestling/">Борьба</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/taekwondo/">Тхэквондо</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/mma/">ММА</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/sambo/">Самбо</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/wushu/">Ушу</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/mixfight/">Смешанные единоборства</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/muaythai/">Муай тай</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/kickboxing/">Кикбоксинг</a>
+                    </li>
+                    <li class="header__submenu-item">
+                        <a class="header__submenu-link" href="/aikido/">Айкидо</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<content class='col-xs-12'>
+  <div class="left-colon">
+    
+
+<div class="section bgr-lightblue slideshow only4" id="slideshow1">
+    <p class="title center">Главное</p>
+    <div class="content-column-right">
+        <ul class="slides-menu tabs nohash">
+            
+            <li>
+                <a href="https://karate.ru/news/2021-12-22/karate-itogi-2021-goda/" class="tab">Каратэ: итоги 2021 года</a>
+            </li>
+            
+            <li>
+                <a href="https://karate.ru/news/2021-12-30/luchshie-nokauty-v-ufc-2021-goda-bojcov-sssr/" class="tab">Лучшие нокауты в UFC 2021 года бойцов с постсоветского пространства. Видео</a>
+            </li>
+            
+            <li>
+                <a href="https://karate.ru/news/2021-12-30/luchshie-sabmishny-v-ufc-2021-goda-video/" class="tab">Лучшие сабмишны в UFC 2021 года. Видео</a>
+            </li>
+            
+            <li>
+                <a href="https://karate.ru/news/2021-12-30/luchshie-nokauty-v-ufc-2021-goda-video/" class="tab">Лучшие нокауты в UFC 2021 года. Видео</a>
+            </li>
+            
+            <li>
+                <a href="https://karate.ru/articles/hvatit-liriki-pochemu-v-rossii-ne-lyubyat/" class="tab">Хватит лирики! Почему в России не любят дагестанца Хабиба Нурмагомедова</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="content-column-left slides cycle" fx="scrollVert" timeout="3000">
+        
+            <a href="https://karate.ru/news/2021-12-22/karate-itogi-2021-goda/" class="slide maximage">
+                <img src="/media/images/index_slide/Chernyisheva-6.jpg.460x380_q85.jpg" alt="" />
+            </a>
+        
+            <a href="https://karate.ru/news/2021-12-30/luchshie-nokauty-v-ufc-2021-goda-bojcov-sssr/" class="slide maximage">
+                <img src="/media/images/index_slide/76567.jpg.460x380_q85.jpg" alt="" />
+            </a>
+        
+            <a href="https://karate.ru/news/2021-12-30/luchshie-sabmishny-v-ufc-2021-goda-video/" class="slide maximage">
+                <img src="/media/images/index_slide/maxresdefault_SNRlhL1.jpg.460x380_q85.jpg" alt="" />
+            </a>
+        
+            <a href="https://karate.ru/news/2021-12-30/luchshie-nokauty-v-ufc-2021-goda-video/" class="slide maximage">
+                <img src="/media/images/index_slide/6554645.jpg.460x380_q85.jpg" alt="" />
+            </a>
+        
+            <a href="https://karate.ru/articles/hvatit-liriki-pochemu-v-rossii-ne-lyubyat/" class="slide maximage">
+                <img src="/media/images/index_slide/865_mB0AhZR.jpg.460x380_q85.jpg" alt="" />
+            </a>
+        
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // Только четыре слайда
+            $('.only4#slideshow1 .slides .slide:gt(3), .only4#slideshow1 .slides-menu li:gt(3)').remove();
+
+            // Растяжка картинок
+            $('#slideshow1 .slide.maximage').maximage({
+                cssBackgroundSize: true,
+                cssTransitions: false,
+                fillElement: 'this',
+                backgroundSize: 'cover',
+                onFirstImageLoaded: function() { $('#slideshow1 .slides').fadeIn('fast'); }
+            });
+
+            $(window).bind('load', function(){
+                // Ротация слайдов
+                $('.cycle')
+                        .each(function(index, obj) {
+                            $(obj).cycle({
+                                fx: $(obj).attr('fx') ? $(obj).attr('fx') : 'fade',
+                                rev: 1,
+                                speed: $(obj).attr('speed') ? $(obj).attr('speed') : 'fast',
+                                timeout: $(obj).attr('timeout') ? $(obj).attr('timeout') : 1000,
+                                delay: 0,
+                                //pause: true,
+                                //pager: $(obj).parents('.slideshow').find('.pager'),
+                                before: function( current, next, options ) {
+                                    $(current).parents('.cycle').trigger('cycled');
+                                }
+                            });
+                        });
+
+                // Синхронизация ссылок и картинок
+                $('#slideshow1 .cycle')
+                        .on('cycled', function(){
+                            var options = $(this).data('cycle.opts');
+                            var index = options.nextSlide;
+                            //if ( index < 0 ) index = 0;
+                            //else index = options.nextSlide;
+                            openTab( $('#slideshow1 .slides-menu li:eq(' + index + ') .tab'));
+                        });
+                $('.slideshow .slides-menu a.tab').hover(
+                        function(){
+                            var tab = $(this);
+                            tab.parents('.slideshow').find('.cycle').cycle( tab.parents('li').index()).cycle('pause');
+                        },
+                        function(){
+                            var tab = $(this);
+                            tab.parents('.slideshow').find('.cycle').cycle( tab.parents('li').index()).cycle('resume');
+                        }
+                );
+                $('.slideshow .slides.cycle').hover(
+                        function(){ $(this).cycle('pause'); },
+                        function(){ $(this).cycle('resume'); }
+                );
+            });
+
+        });
+    </script>
+</div>
+
+<div class="section no-border">
+    <div class="content-column-left news">
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-27/mihail-aloyan-poproshalsya-s-bolshim-ringom/">
+          <img src="/media/images/2022/2/27/Misha.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Михаил Алоян попрощался с рингом</p>
+            <p class="date">27 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Российский боксёр-профессионал Михаил Алоян, как и обещал, завершил карьеру после победного боя в Москве, в котором он защитил титул чемпиона WBA Gold в весовой категории до 52,16 кг.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-27/evropejskij-soyuz-dzyudo-otmenil-turniry-na-territ/">
+          <img src="/media/images/2022/2/27/EJU%20Logo.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Дзюдо: Европейский союз дзюдо отменил турниры на территории России</p>
+            <p class="date">27 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В России не состоятся два ближайших турнира под эгидой Европейского союза дзюдо (EJU). Такое решение принято 26 февраля 2022 года в связи со сложившейся международной ситуацией.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-27/samye-yarkie-momenty-boya-tejlor-ketteroll/">
+          <img src="/media/images/2022/2/27/Afisha_PdtfcMu.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Самые яркие моменты боя Тейлор - Кэттеролл</p>
+            <p class="date">27 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Сегодня ночью шотландец Джош Тейлор защитил титул абсолютного чемпиона мира в категории до 63,5 кг. Портал karate.ru публикует видео самых ярких моментов его боя с англичанином Джеком Кэттероллом.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-27/tejlor-zashitil-poyasa-razdelnym-resheniem-sudej/">
+          <img src="/media/images/2022/2/27/Afisha.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Тейлор защитил пояса раздельным решением судей</p>
+            <p class="date">27 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В ночь на 27 февраля 2022 года в крупнейшем городе Шотландии Глазго абсолютный чемпион мира и победитель Всемирной боксёрской суперсерии шотландец Джош Тейлор защитил титулы в поединке с англичанином Джеком Кэттероллом в весовой категории до 63,5 кг.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-27/pobeda-islama-mahacheva-v-las-vegase-polnoe-video-/">
+          <img src="/media/images/2022/2/27/Mahachev-afisha_q8DcB3E.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Мма: Победа Ислама Махачева в Лас-Вегасе: полное видео боя</p>
+            <p class="date">27 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В ночь на воскресенье, 27 февраля 2022 года, в Лас-Вегасе (США) состоялся главный бой турнира UFC Fight Night 202, в котором российский файтер Ислам Махачев (22-1) взял верх над американцем Бобби Грином (29-13-1).</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/gilermo-rigondo-proigral-titulnyj-boj/">
+          <img src="/media/images/2022/2/26/Afisha-Rigondo.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Гильермо Ригондо проиграл титульный бой</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">26 февраля 2022 года в Дубае (ОАЭ) состоялся боксёрский вечер, главным поединком которого был бой между двукратным олимпийским чемпионом Гильермо Ригондо (Куба) и филиппинцем Винсентом Астролябио.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/kubok-mira-po-boksu-mogut-perenesti-iz-rossii-v-dr/">
+          <img src="/media/images/2022/2/26/IBA-logo.png.180x120_q85_crop-smart.png">
+          <div class="content">
+            <p class="title">Бокс: Кубок мира по боксу могут перенести из России в другую страну</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Международная боксёрская ассоциация (IBA) сегодня, 26 февраля 2022 года, сообщила о возможном переносе финала командного Кубка мира, который планировалось провести в июне в Москве, из России в другую страну.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/britanskoe-derbi-v-glazgo-tejlor-protiv-ketterolla/">
+          <img src="/media/images/2022/2/26/Afisha%20matcha.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Британское дерби в Глазго: Тейлор против Кэттеролла</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Сегодня, 26 февраля 2022 года, в крупнейшем городе Шотландии Глазго абсолютный чемпион мира и победитель Всемирной боксёрской суперсерии шотландец Джош Тейлор проведёт защиту всех своих поясов. Его соперник – обязательный претендент по линии WBO англичанин Джек Кэттеролл.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/shou-s-uchastiem-gilermo-rigondo-pryamaya-translya/">
+          <img src="/media/images/2022/2/26/Rigondo.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Шоу с участием Гильермо Ригондо: прямая трансляция</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В эти минуты в Дубае проходит боксёрский вечер, главным поединком которого станет бой междй двукратным олимпийским чемпионом Гильермо Ригондо (Куба) и филиппинцем Винсентом Астролябио. На кону в этом бою стоит вакантный пояс WBC International в легчайшем весе.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/koronaciya-supertyazha-alana-hugaeva-otlozhena/">
+          <img src="/media/images/2022/2/26/Poyas%20VBS.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Коронация супертяжа Алана Хугаева отложена</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В ночь на 26 февраля 2022 года Всемирный боксерский совет (WBC) на совещании в штаб-квартире организации в столице Мексики принял решение приостановить проведение турниров под своей эгидой на территории России из-за военных действий на Украине с участием российских войск.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/v-kazani-ne-sostoitsya-turnir-serii-bolshoj-shlem/">
+          <img src="/media/images/2022/2/26/Kazan&#39;-dzyudo.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Дзюдо: В Казани не состоится турнир серии «Большой шлем»</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">25 февраля 2022 года Международная федерация дзюдо (IJF) приняла решение отменить престижный международный турнир серии «Большой шлем», который должен был пройти в Казани с 20 по 22 мая. Сообщение об этом портал karate.ru получил в ночь на субботу, 26 февраля.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/ismailov-uspeshno-debyutiroval-na-bolshom-ringe/">
+          <img src="/media/images/2022/2/26/Durodola.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Исмаилов успешно дебютировал на большом ринге</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">25 февраля 2022 года известный российский мастер смешанных единоборств Магомед Исмаилов одержал победу в своем дебютном поединке на боксёрском ринге. В главном бою суперсерии «Бойцовский клуб Рен ТВ» он одержал победу над профессиональным боксёром из Нигерии Оланреваджу Дуродолой.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-26/musasi-opravdal-prognozy-i-pobedil-vanderforda/">
+          <img src="/media/images/2022/2/26/Musasi-pobeda.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Мма: Мусаси оправдал прогнозы и победил Вандерфорда</p>
+            <p class="date">26 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">В ночь на 26 февраля в столице Ирландии Дублине на арене «3Arena» состоялся турнир по смешанным единоборствам Bellator 275. В главном поединке турнира чемпион лиги в среднем весе Гегард Мусаси из Нидерландов защитил свой титул в поединке с американцем Остином Вандерфордом и оправдал прогнозы букмеке...</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-25/fyuri-i-uajt-ustroyat-bojnyu-na-uembli/">
+          <img src="/media/images/2022/2/25/Tajson%20F&#39;yuri.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Бокс: Фьюри и Уайт устроят бойню на Уэмбли</p>
+            <p class="date">25 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Всемирный боксёрский совет сегодня, 25 февраля 2022 года, официально определился с датой и местом боя между чемпионом WBC в супертяжёлом весе Тайсоном Фьюри и обязательным претендентом и временным чемпионом WBC Диллианом Уайтом. Поединок состоится 23 апреля на знаменитом лондонском стадионе «Уэмбли»...</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-25/v-tveri-startoval-chempionat-rossii-po-kata/">
+          <img src="/media/images/2022/2/25/kata.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Дзюдо: В Твери стартовал чемпионат России по ката</p>
+            <p class="date">25 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">С 25 по 28 февраля 2022 года в физкультурно-оздоровительном комплексе имени С. Ахмерова в Твери проходят первенство среди юношей и девушек не старше 18 лет и чемпионат России по дзюдо в дисциплине ката. К участию в соревнованиях допущено 200 спортсменов. </p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="node-news clearfix">
+          <a href="/news/2022-02-25/gegard-musasi-ostin-vanderford-prognoz-ot-sportivn/">
+          <img src="/media/images/2022/2/25/Pretendent.jpg.180x120_q85_crop-smart.jpg">
+          <div class="content">
+            <p class="title">Мма: Гегард Мусаси – Остин Вандерфорд: прогноз от спортивных экспертов</p>
+            <p class="date">25 февраля</p>
+            <div class="clearfix"></div>
+            <p class="text">Сегодня, 25 февраля 2022 года, в столице Ирландии Дублине состоится главный поединок турнира по смешанным единоборствам Bellator 275. Нидерландский профессиональный боец Гегард Мусаси поборется с американцем Остином Вандерфордом за титул чемпиона в среднем весе. Прогнозом на бой поделился спортивный...</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="all-news">
+        <a href="/news/">Все новости</a>
+      </div>
+    </div>
+    <div class="events content-column-right section-mobile">
+      <p class="title center">События</p>
+      <ul>
+        
+      </ul>
+      <div class="all-events">
+        <a href="/eventsa/">Все события</a>
+      </div>
+      <div class="viewport-mobile">
+          <div class="spacer"></div>
+          <p class="title center temporary_note">
+            
+            <div class="spacer"></div>
+            
+          </p>
+      </div>
+    </div>
+</div>
+
+<div class="section club-organization ">
+  <p class="title center">клубы и организации</p>
+  <ul class="flex nowrap">
+    
+    <li>
+      <a href="/clubs/sk-karate-do-okinawa-goju-ryu-sk-kogr/">
+        <img src="/media/images/2015/12/25/wpid-kenkon300.gif.120x0_q85.jpg">
+        <p>СК Каратэ-до Окинава Годзю-Рю  (СК &quot;КОГР&quot;)</p>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/clubs/dyussh-po-tradicionnomu-karate/">
+        <img src="/media/images/2015/3/13/title-main-ru.png.120x0_q85.png">
+        <p>ДЮСШ по традиционному каратэ г.Челябинска</p>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/clubs/alfabudo/">
+        <img src="/media/images/2014/9/22/a_37a9ed04.jpg.120x0_q85.jpg">
+        <p>Спортивный Клуб &quot;Альфа-БУДО&quot;</p>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/clubs/tomskaya-regionalnaya-obshestvennaya-organizaciya-/">
+        <img src="/media/images/2013/3/22/Emblema%20ATEMI.jpg.120x0_q85.jpg">
+        <p>Томская региональная общественная организация &quot;Детско-юношеский спортивный клуб каратэ &quot;АТЭМИ&quot;</p>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/clubs/puma-altufevo/">
+        <img src="/media/images/2013/4/14/label.jpg.120x0_q85.jpg">
+        <p>Центр боевых искусств &quot;Пума-Алтуфьево&quot;</p>
+      </a>
+    </li>
+    
+  </ul>
+  <div class="manage-club">
+    <a class="all-club" href="/organizations/">Все организации каратэ</a>
+    <a class="add-club" href="/organiz/add/" onclick="popup_load('Вход', '/login_popup/?next=/organiz/add/'); return false;">Добавить клуб <i class="icon-plus-sign"></i></a>
+  </div>
+</div>
+
+  </div>
+  <div class="right-colon">
+      
+      
+      
+      <div class="baner viewport-desktop">
+          
+            
+
+          
+      </div>
+      <div class="advertising">
+        
+          <div class="node">
+            <p class="title arts-l center"><a href="/news/martialarts/">Новости единоборств</a></p>
+            <ul class="news_second_type">
+            
+              <li><a href="/news/2022-02-27/konor-makgregor-predlozhil-olivejre-poedinok/">Мма: Конор Макгрегор предложил Оливейре поединок </a></li>
+            
+              <li><a href="/news/2022-02-27/mihail-aloyan-poproshalsya-s-bolshim-ringom/">Бокс: Михаил Алоян попрощался с рингом</a></li>
+            
+              <li><a href="/news/2022-02-27/kolbi-kovington-zayavil-chto-mozhet-smenit-vesovuy/">Мма: Колби Ковингтон заявил, что может сменить весовую категорию </a></li>
+            
+              <li><a href="/news/2022-02-27/evropejskij-soyuz-dzyudo-otmenil-turniry-na-territ/">Дзюдо: Европейский союз дзюдо отменил турниры на территории России</a></li>
+            
+              <li><a href="/news/2022-02-27/bobbi-grin-prokommentiroval-svoe-porazhenie-mahach/">Мма: Бобби Грин прокомментировал свое поражение Махачеву на UFC Fight Night 202</a></li>
+            
+            </ul>
+            <div class="all-news" style="text-align:center;">
+              <a href="/news/martialarts/">Все новости</a>
+            </div>
+          </div>
+          
+
+        <div class="node viewport-desktop">
+          
+            
+
+          
+        </div>
+
+        
+            <div class="node viewport-desktop">
+                <p class="title center">Мир каратэ</p>
+                
+<div class="sticky_parent karate-world-content">
+	 <ul id="kwcarousel" class="jcarousel-skin-tango">
+      
+        <li class="karate-world-item always-show" style="padding:5px 0;">
+            <a href="/mastera_karate/">Мастера каратэ</a>
+        </li>
+      
+        <li class="karate-world-item always-show" style="padding:5px 0;">
+            <a href="/karate_v_rossii/">Каратэ в России</a>
+        </li>
+      
+        <li class="karate-world-item always-show" style="padding:5px 0;">
+            <a href="/sportivnoe_karate/">Спортивное каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate_shotokan_kata/">Каратэ шотокан ката</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/okinawa_karate/">Окинава каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/poyasa_v_karate/">Пояса в каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/vidi_karate/">Виды каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate_shotokan/">Каратэ шотокан</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/boi_karate/">Бои каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/mir_karate/">Мир каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Tehnika_karate/">Техника каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/sekziya_karate/">Секция каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Kiokushinkaj_karate_poyasa/">Киокушинкай карате пояса</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/sait_karate/">Сайт каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/European_karate_champioship/">Чемпионат Европы по каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/karate_v_mire/">Каратэ в мире</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Kata_karate/">Ката каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate/">Каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Kosiki_karate/">Косики каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Oyama_Masutatsu/">Ояма Масутацу</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Yaponskoe_karate/">Японское каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/stili_karate/">Стили каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/boevie_iskusstva_vostoka/">Боевые искусства востока</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Kiokushinkaj_karate/">Киокушинкай карате</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/detskoe_karate/">Детское каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/boevie_iskusstva_shaolinya/">Боевые искусства Шаолиня</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/olymp-karate/">&quot;Олимпийское каратэ&quot;</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/luchshee_karate/">Лучшее каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate_Moscow/">Каратэ в Москве</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/kimono_dlya_karate/">Кимоно для каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/karate_federation/">Федерация каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/vsestilevoe-karate/">Всестилевое каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/karate_online/">Каратэ онлайн</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate_obuchenie/">Обучение каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/karate_goju_ryu/">Каратэ годзю рю</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/boevoe_karate/">Боевое каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Ashihara_karate/">Ашихара каратэ</a>
+        </li>
+      
+        <li class="karate-world-item" style="padding:5px 0;">
+            <a href="/Karate_school/">Школа каратэ</a>
+        </li>
+      
+	 </ul>
+   <a class="less" href="javascript:void(0);">Скрыть</a>
+   <a class="more" href="javascript:void(0);">Показать всё</a>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $(window).bind('load', function(){
+      setSticky();
+  });
+  $('a.more, a.less').bind('click', function(){
+      $(window).trigger('resize');
+      $('body, html').stop(true,true).animate({scrollTop: $('.sticky_parent').offset().top}, 500);
+  });
+  $(window).bind('resize', function(){
+      $(document.body).trigger('sticky_kit:recalc');
+  });
+
+  function showAllKarateWorld() {
+    $('.karate-world-item').show();
+    $('.karate-world-content a.more').hide();
+    $('.karate-world-content a.less').show();
+  }
+
+  function hideKarateWorld() {
+    $('.karate-world-item:not(.always-show)').hide();
+    $('.karate-world-content  a.more').show();
+    $('.karate-world-content  a.less').hide();
+  }
+
+  hideKarateWorld();
+  $('.karate-world-content a.more').click(function(e) {
+      e.preventDefault();
+      showAllKarateWorld();
+  });
+
+  $('.karate-world-content a.less').click(function(e) {
+      e.preventDefault();
+      hideKarateWorld();
+  });
+});
+</script>
+
+            </div>
+        
+
+        <div class="node viewport-desktop">
+          
+
+        </div>
+      </div>
+      <div class="socialplugin">
+          <p class="title center">Мы в соцсетях:</p>
+          <ul>
+              <li class='soc-pl-btn active' id='soc-pl-vk'></li>
+              <li class='soc-pl-btn' id='soc-pl-tw'></li>
+              <li class='soc-pl-btn' id='soc-pl-fb'></li>
+              <li class='soc-pl-btn' id='soc-pl-yt'></li>
+          </ul>
+          <div class="clearfix"></div>
+          <div class="socialplugin-container">
+              <div class="soc-pl-content active" id='soc-pl-vk' class="active">
+                  <script type="text/javascript" src="//vk.com/js/api/openapi.js?98"></script>
+
+                  <div id="vk_groups"></div>
+                  <script type="text/javascript">
+                      VK.Widgets.Group("vk_groups", {mode: 0, width: "240", height: "300", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 22298014);
+                  </script>
+              </div>
+              <div class="soc-pl-content" id='soc-pl-tw'>
+                 <a class="twitter-timeline" href="https://twitter.com/karate_ru" data-widget-id="389722251496402944">Твиты пользователя @karate_ru</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+              </div>
+              <div class="soc-pl-content" id='soc-pl-fb'>
+                  <div class="fb-like-box" data-href="http://www.facebook.com/www.karate.ru" data-width="240" data-height="The pixel height of the plugin" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
+              </div>
+              <div class="soc-pl-content" id='soc-pl-yt'>
+                  <script src="https://apis.google.com/js/plusone.js"></script>
+
+                  <div class="g-ytsubscribe" data-channel="wwwKarateru" data-layout="full"></div>
+              </div>
+
+              <div class="clearfix"></div>
+          </div>
+      </div>
+      <div class="advertising">
+        <div class="node viewport-desktop" style="margin-top:10px">
+            
+              
+    
+        <div id="infox_23402"></div><script type="text/javascript"> 
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            INFOX23402.renderTo("infox_23402");
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//rb.infox.sg/infox/23402";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "infoxContextAsyncCallbacks23402");
+</script>
+    
+
+
+            
+        </div>
+      </div>
+  </div>
+  <div class="clearfix"></div>
+</content>
+<footer>
+        <div class="first-row-footer" style="float:left;width:100%;">
+          <a class="logo" href=""></a>
+          <div class="info" style="float:left; width:550px; padding-left:50px;">
+              <ul>
+                  <li>© 2010-2022</li>
+                  <li><a href="mailto:info@karate.ru">info@karate.ru</a></li>
+                  <li><a href="/authentication/" onclick="popup_load('Вход', '/login_popup/'); return false;" rel="nofollow">Вход/регистрация</a></li>
+              </ul>
+              
+                 <a href="#"  class="link-versions" id="mobile-version-link">Мобильная версия</a>
+              
+              <div class="copyright" style="float:left; font-size:12px; padding-top:10px; color: #6682b3;">Наш партнер: <a href="https://combatmarkt.com" style="color: inherit; text-decoration: underline;">combatmarkt.com</a> — экипировка для бокса и единоборств</div>
+              <div class="copyright" style="float:left; font-size:12px; padding-top:10px; color: #6682b3;">При использовании материалов сайта обязательно наличие активной индексируемой ссылки на Karate.ru.</div>
+          </div>
+        </div>
+        <div class="counters">
+        <script type="text/javascript">
+          document.write("<a class='liveinternet' href='http://www.liveinternet.ru/click' "+
+          "target=_blank><img src='//counter.yadro.ru/hit?t45.6;r"+
+          escape(document.referrer)+((typeof(screen)=="undefined")?"":
+          ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+          screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+          ";"+Math.random()+
+          "' alt='' title='LiveInternet' "+
+          "border='0' width='31' height='31'><\/a>")
+          </script>
+
+
+
+
+        <script id="top100Counter" type="text/javascript" src="https://counter.rambler.ru/top100.jcn?2975214"></script>
+        <noscript>
+        <a href="http://top100.rambler.ru/navi/2975214/">
+        <img src="http://counter.rambler.ru/top100.cnt?2975214" alt="Rambler's Top100" border="0" />
+        </a>
+
+        </noscript>
+          <a href="http://top.mail.ru/jump?from=2439350" target="_blank">
+            <img src="//top-fwz1.mail.ru/counter?id=2439350;t=617;l=1"
+            style="border:0;" height="31" width="70" alt="Рейтинг@Mail.ru" />
+          </a>
+
+      </div>
+        </footer>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" id="modal_window" style="display: none; " aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="modal_header"></h3>
+  </div>
+  <div class="modal-body" id="modal_body">
+    <p></p>
+  </div>
+  <div class="modal-footer" id="modal_footer">
+    <a href="#" class="btn btn-primary" id="modal_btn_yes">Да</a>
+    <a href="#" class="btn" id="modal_btn_no">Нет</a>
+  </div>
+</div>
+
+
+    <script type="text/javascript" >
+      function load_news(hdr, ref){
+        $('#modal_header').html(hdr);
+        $('#modal_body').load(ref, function() {
+          $('#modal_footer').hide();
+          $('#modal_window').modal('show');
+        });
+      }
+
+
+      function popup_yes_no(hdr, txt, yes_f, no_f){
+        $('#modal_header').html(hdr);
+        $('#modal_body').html('<p>' + txt + '</p>');
+        $('#modal_footer').show();
+        $('#modal_btn_yes').attr('onclick', yes_f);
+        $('#modal_btn_no').attr('onclick', no_f);
+        $('#modal_window').modal('show');
+      }
+
+      function popup_wait(hdr){
+        $('#modal_header').html(hdr);
+        $('#modal_body').html('<p>Пожалуйста, подождите</p>');
+        $('#modal_footer').hide();
+        $('#modal_window').modal('show');
+      }
+
+      function popup_load(hdr, ref){
+          $('#modal_header').html(hdr);
+          $('#modal_body').load(ref, function() {
+              $('#modal_footer').hide();
+              $('#modal_window').modal('show');
+          });
+      }
+
+      function popup_iframe(hdr, ref){
+        $('#modal_header').html(hdr);
+        $('#modal_body').html('<iframe width="560" height="400" src="'+ref+'" id="edit_model_frame" frameBorder="0"></iframe>');
+        $('#modal_footer').hide();
+        $('#modal_window').modal('show');
+      }
+
+      function popup_info(hdr){
+        $('#modal_header').html(hdr);
+        $('#modal_body').html('<a href="#" onclick="popup_close(); return false;" class="btn" id="modal_btn_cancel">Закрыть</a>');
+        $('#modal_footer').hide();
+        $('#modal_window').modal('show');
+      }
+
+      function popup_body_info(hdr){
+        $('#modal_header').html('');
+        $('#modal_body').html(hdr);
+        var a = $('<a/>')
+        a.attr('data-clipboard-text', 'copy text');
+        a.attr('onclick','return false;');
+        a.attr('id', 'img_link');
+        a.html('Копировать')
+        a.attr('href', '#');
+        $('#modal_body').append('<br/>')
+        $('#modal_body').append(a);
+        $('#modal_footer').hide();
+        $('#modal_window').modal('show');
+      }
+
+      function popup_close(){
+        $('#modal_window').modal('hide');
+      }
+
+      $(function () {
+        ref = document.location.href;
+        param = ref.split('#')[1];
+        if (param == 'login'){
+            popup_load('Вход', '/login_popup/')
+        }
+      });
+    </script>
+          
+          
+<script>
+    (function(w,d,o,g,r,a,m){
+        var cid=(Math.random()*1e17).toString(36);d.write('<div id="'+cid+'"></div>');
+        w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+        function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
+            var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;
+            a.src='//cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
+            p.parentNode.insertBefore(a,p)}}e(g,w,r);
+        w[r](cid,{id:1998744649,domain:w[r+'h']});
+    })(window,document,'script',['trafficdok.com'],'ABNS');
+</script>   
+ 
+        </body>
+</html>
