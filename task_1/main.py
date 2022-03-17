@@ -12,7 +12,8 @@ class Crawler:
         Выкачка html страниц
         :return:
         """
-        os.mkdir(self.folder_name)
+        if not os.path.exists(self.folder_name):
+            os.mkdir(self.folder_name)
 
         urls = [line.rstrip('\n') for line in open(self.input_file)]
         urls_set = set(urls)
@@ -57,3 +58,4 @@ class Crawler:
 if __name__ == '__main__':
     c = Crawler()
     c.handler()
+
