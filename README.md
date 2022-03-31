@@ -61,3 +61,17 @@ cd task_4
 ```bash
 python3 main.py
 ```
+
+
+#### Task 5
+
+##### Change the directory to the run script
+```bash
+cd task_5/searcher
+```
+
+##### Run script
+
+```bash
+uvicorn app:app --reload
+```
